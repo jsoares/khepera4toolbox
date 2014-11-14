@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<swistrack>
+  <components>
+    <component type="InputCameraGigE">
+      <enabledinterval value="1"/>
+      <parameter name="AOISize.x" value="1032"/>
+      <parameter name="AOISize.y" value="778"/>
+      <parameter name="AnalogGain" value="552"/>
+      <parameter name="CameraFullName" value="Basler scA1000-30gc#0030530ABCC2#192.168.241.2:3956"/>
+      <parameter name="ExposureTime" value="614"/>
+    </component>
+    <component type="ConvertToColor">
+      <enabledinterval value="1"/>
+    </component>
+    <component type="ColorMask">
+      <enabledinterval value="1"/>
+      <parameter name="MaskImage" value="./arena_mask.bmp"/>
+    </component>
+    <component type="BlobDetectionRedGreen">
+      <enabledinterval value="1"/>
+      <parameter name="Color1_AreaMax" value="200"/>
+      <parameter name="Color1_AreaMin" value="3"/>
+      <parameter name="Color1_SelectionByArea" value="true"/>
+      <parameter name="Color1_Threshold" value="100"/>
+      <parameter name="Color2_AreaMax" value="50"/>
+      <parameter name="Color2_AreaMin" value="2"/>
+      <parameter name="Color2_SelectionByArea" value="true"/>
+      <parameter name="Color2_Threshold" value="50"/>
+      <parameter name="MaxDistance" value="32.000000"/>
+      <parameter name="mMaxNumberOfParticles" value="20"/>
+    </component>
+    <component type="CalibrationTSAI">
+      <enabledinterval value="1"/>
+      <parameter name="CalibrationPoints" value="./calibration_points.xml"/>
+      <parameter name="Ncx" value="1032.000000"/>
+      <parameter name="Ncy" value="778.000000"/>
+      <parameter name="Nfx" value="1032.000000"/>
+      <parameter name="Nfy" value="778.000000"/>
+      <parameter name="dx" value="0.004650"/>
+      <parameter name="dy" value="0.00465"/>
+      <parameter name="sx" value="1.000000"/>
+    </component>
+    <component type="OutputParticles">
+      <enabledinterval value="1"/>
+    </component>
+  </components>
+  <server>
+    <port>3001</port>
+  </server>
+</swistrack>

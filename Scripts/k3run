@@ -1,0 +1,65 @@
+#! /usr/bin/perl
+use strict;
+
+# Include the k3-commons file
+my $basepath=($0 =~ /(.*)\/(.*?)/)[0];
+require $basepath.'/k3-commons', 'INCLUDED';
+
+# Parse the command line
+my @command;
+my $stdoutfile;
+my $stderrfile;
+my $block;
+while (my $cmd = shift) {
+	if ($cmd =~ /^\+(.*)$/) {
+		&robotlist_add($1);
+	} elsif ($cmd eq '-o') {
+		$stdoutfile = shift;
+	} elsif ($cmd eq '-e') {
+		$stderrfile = shift;
+	} elsif ($cmd eq '-b') {
+		$block = 1;
+	} else {
+		push @command, $cmd if ($cmd ne '-');
+		while (my $cmd = shift) {
+			push @command, $cmd;
+		}
+	}
+}
+
+# Prepare and check
+my $user=$ENV{'USER'} || 'unknown_user';
+my @robotlist=&robotlist_get();
+&help('No robots specified.') if (! scalar @robotlist);
+&help('No command specified.') if (! scalar @command);
+
+# Execute the commands on the robots
+my $command='sh -c \''.join(' ', @command).'\'';
+foreach my $robotip (@robotlist) {
+	# Prepare the directory where the output/error files are stored
+	mkdir 'k3-'.$robotip if ((defined $stdoutfile) || (defined $stderrfile));
+	my $redirect_stdout=((defined $stdoutfile) ? ' > k3-'.$robotip.'/'.$stdoutfile : '');
+	my $redirect_stderr=((defined $stderrfile) ? ' 2> k3-'.$robotip.'/'.$stderrfile : '');
+	my $exec_cmd='ssh root@'.$robotip.' "'.$command.'"'.$redirect_stdout.$redirect_stderr;
+	$exec_cmd.=' &' if (! $block);
+
+	# Execute the command
+	&print_and_execute($exec_cmd);
+}
+
+# Help
+sub help {
+	if (my $err=shift) {
+		print $err, "\n";
+		print "\n";
+	}
+
+	print 'Executes a command on all robots and optionally stores the output into a local file.', "\n";
+	print 'Usage: k3run +ROBOT1 +ROBOT2 ... -o STDOUTFILE -e STDERRFILE - COMMAND', "\n";
+	print '    +ROBOTx    Robot ID (e.g. 200), IP (e.g. 192.168.141.200) or name (e.g. bob)', "\n";
+	print '    -o FILE    Redirects stdout to FILE', "\n";
+	print '    -e FILE    Redirects stderr to FILE', "\n";
+	print '    -b         Blocks until the command completes', "\n";
+	print '    COMMAND    Command to execute on the robot (absolute paths)', "\n";
+	exit(1);
+}

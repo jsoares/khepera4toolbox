@@ -1,0 +1,33 @@
+Khepera III Toolbox
+================================================================================
+
+Welcome to the Khepera III Toolbox!
+
+This README file contains only a few pointers and quick start information. The
+official documentation of this toolbox is available online as wikibook:
+	http://en.wikibooks.org/wiki/Khepera_III_Toolbox
+This documentation also includes installation guidelines, a short introduction
+for new users and a lot of examples.
+
+For a very quick start, here is how you have to set your environment variables
+in order to use the toolbox:
+	export K3_ROOT=/path/to/the/khepera3toolbox
+	export PATH=$PATH:$K3_ROOT/Scripts
+
+Enjoy working with the Khepera III robot!
+
+--------------------------------------------------------------------------------
+Main developer (and contact for bug reports, comments and feature requests):
+	Thomas Lochmatter, thomas.lochmatter@epfl.ch
+
+Valuable help came from:
+	Iñaki Navarro
+	Jim Pugh
+	Gilles Caprari (K-Team SA)
+	Frederic Lambercy (K-Team SA)
+	Sven Gowal
+	Michael Karlen
+	Bob Andries
+	Guillermo Fernandez Rodriguez
+	Pierre-François Laquerre
+--------------------------------------------------------------------------------

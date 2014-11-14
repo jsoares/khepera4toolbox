@@ -1,0 +1,46 @@
+#! /usr/bin/perl
+use strict;
+
+# Include the k3-commons file
+my $basepath=($0 =~ /(.*)\/(.*?)/)[0];
+require $basepath.'/k3-commons', 'INCLUDED';
+
+# Parse the command line
+while (my $cmd=shift) {
+	if ($cmd =~ /^\+(.*)$/) {
+		&robotlist_add($1);
+	} else {
+		&help();
+	}
+}
+
+# Prepare and check
+my @robotlist=&robotlist_get();
+&help('No robots specified.') if (! scalar @robotlist);
+
+# Ping one or all robots
+if (scalar @robotlist == 1) {
+	&print_and_execute('ping', $robotlist[0]);
+} else {
+	foreach my $robotip (@robotlist) {
+		my $res=system('ping -c 3 -i 1 -t 2 '.$robotip.' > /dev/null');
+		if ($res==0) {
+			print $robotip, ': alive', "\n";
+		} else {
+			print $robotip, ': not alive (ping exit code: ', $res, ')', "\n";
+		}
+	}
+}
+
+# Help
+sub help {
+	if (my $err=shift) {
+		print $err, "\n";
+		print "\n";
+	}
+
+	print 'Checks if robots are alive.', "\n";
+	print 'Usage: k3ping [+ROBOT1 +ROBOT2 ...]', "\n";
+	print '    +ROBOTx    Robot ID (e.g. 200), IP (e.g. 192.168.141.200) or name (e.g. bob)', "\n";
+	exit(1);
+}

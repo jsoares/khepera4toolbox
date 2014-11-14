@@ -1,0 +1,35 @@
+#! /usr/bin/perl
+
+# Configuration
+my $ssh='/usr/bin/ssh';
+my $scp='/usr/bin/scp';
+my $sshhost=(shift || '192.168.1.2');
+my $sshuserhost='root@'.$sshhost;
+
+# Welcome message
+print 'We will now copy/modify a series of files on the robot.', "\n";
+print 'Each command (and there are many of them) requires you to type the robot\'s root password,', "\n";
+print 'unless you have ssh public key authentication set up. You can easily setup public key', "\n";
+print 'authentication with', "\n";
+print '    k3-ssh-keysetup +usb', "\n";
+print 'of the Khepera III Toolbox.', "\n";
+
+# Get the robot ID from the robot, or ask the user to type it
+my $robotid=shift;
+if (! $robotid) {
+	$robotid=int(`./getrobotid $sshhost`);
+	while (! $robotid) {
+		print "\n";
+		print 'Robot ID (2-255): ';
+		$robotid=int(<>);
+	}
+	print 'Using robot ID: ', $robotid, "\n";
+}
+
+# Set up the robot id, the base profile and the network 
+system('./install_robotid', $sshhost, $robotid) && exit(1);
+system('./install_profile', $sshhost, $robotid) && exit(1);
+system('./install_network', $sshhost, $robotid) && exit(1);
+
+# Add your own install scripts here
+#system('./install_my_own_stuff', $sshhost, $robotid) && exit(1);

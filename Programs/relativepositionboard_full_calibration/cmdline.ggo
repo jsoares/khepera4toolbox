@@ -1,0 +1,8 @@
+package "RB"
+version "1.0a"   # don't use version if you're using automake
+purpose "This program moves the robot randomly and sends back to the swistrack pc RSSI information from the range and bearing board."
+     
+# Options
+option "id" - "The index of the robot. This index should be the same as in the swistrack script" int required
+option "rb-rate" - "The rate of transmission of the range and bearing" double default="3" optional
+option "pc" - "The swistrack PC that sends starting signal" int default="20" optional

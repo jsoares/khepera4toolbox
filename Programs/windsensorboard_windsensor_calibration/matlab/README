@@ -1,0 +1,36 @@
+WindSensorBoard Calibration and Verification
+============================================
+
+Calibration
+-----------
+
+Switch on the wind tunnel and put the robot with the nose pointing in downwind direction into the wind tunnel.
+
+Set the integration interval to 8:
+	./windsensorboard_ntc_integration 8
+Lower values (e.g. 6) yield bad results, while bigger values (e.g. 10) take considerably more time. A full calibration with 8 takes about 30 minutes.
+
+To test how many steps the robot needs to turn once on the spot, try:
+	./windsensorboard_windsensor_calibration --turn -s 5700
+with different values for "s".
+
+Once the correct "s" value has been determined, launch:
+	./windsensorboard_windsensor_calibration --calibrate -s 5700
+To store the calibration in a file, run:
+	./windsensorboard_windsensor_calibration --download > my_calibration_file
+and to recover it from a file, run:
+	./windsensorboard_windsensor_calibration --upload < my_calibration_file
+
+
+Verification
+------------
+
+To verify the calibration, launch
+	./windsensorboard_windsensor_calibration --verify -s 5700 > my_verification
+with the same "s" value you determined before.
+
+Parse the output file with
+	./parse_verification.pl < my_verification > my_verification_matlab
+and plot it in Matlab with
+	load my_verification_matlab;
+	plot_verification(my_verification_matlab);

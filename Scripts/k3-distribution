@@ -1,0 +1,46 @@
+#! /usr/bin/perl
+use strict;
+
+# Include the k3-commons file
+my $basepath=($0 =~ /(.*)\/(.*?)/)[0];
+require $basepath.'/k3-commons', 'INCLUDED';
+
+# Warn the user in case he doesn't know what he is doing
+print 'This script is used by the *maintainers* to create a ZIP file with the complete Khepera III Toolbox.', "\n";
+print 'If you are a *user* of the Khepera III Toolbox, this is probably not what you are looking for.', "\n";
+print 'Press ENTER to continue, or Ctrl-C to quit.', "\n";
+<>;
+
+# Check if an item called "khepera3toolbox" exists
+die 'A file/folder called "khepera3toolbox" exists in the current directory. Delete this folder first, or call this script from another folder (e.g. temp folder)!' if (-e 'khepera3toolbox');
+
+# Get a working copy of the Khepera III Toolbox
+&print_and_execute('svn', 'checkout', 'https://khepera3toolbox.svn.sourceforge.net/svnroot/khepera3toolbox') && die 'Unable to check out the Khepera III Toolbox';
+
+# Add repository info to the README file
+&print_and_execute('echo "This distribution was created from the following SVN repository:" >> khepera3toolbox/VERSION');
+&print_and_execute('echo "" >> khepera3toolbox/VERSION');
+&print_and_execute('svn info khepera3toolbox >> khepera3toolbox/VERSION') && die 'Unable to get SVN info';
+
+# Delete all ".svn" folders
+&print_and_execute('find khepera3toolbox -name .svn -exec rm -rf {} \;');
+
+# Create the ZIP file
+my ($sec, $min, $hour, $mday, $month, $year, $wday, $yday, $isdst)=localtime(time);
+$year+=1900;
+$month++;
+$month='0'.$month if ($month<=9);
+$mday='0'.$mday if ($mday<=9);
+&print_and_execute('zip -r khepera3toolbox-'.$year.'-'.$month.'-'.$mday.'.zip khepera3toolbox') && die 'Unable to create ZIP file';
+
+# Help
+sub help {
+	if (my $err=shift) {
+		print $err, "\n";
+		print "\n";
+	}
+
+	print 'Creates a ZIP file with the complete Khepera III Toolbox. This script is used by the maintainers of the Khepera III Toolbox to create a distribution, and is not helpful to users of the toolbox.', "\n";
+	print 'Usage: k3-distribution', "\n";
+	exit(1);
+}

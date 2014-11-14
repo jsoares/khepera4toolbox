@@ -1,0 +1,60 @@
+#
+# (c) 2006-2008 EPFL, Lausanne, Switzerland
+# Thomas Lochmatter
+#
+
+# Static target, used when compiling with "make static"
+STATICTARGET	:= $(strip $(TARGET))-static
+
+################## Toolchain Selection ##################
+# Activate one of the toolchains below by commenting out the corresponding lines.
+# Note that if you change the toolchain, you need to recompile all modules before recompiling all programs. The k3-make-all script will help you doing this.
+
+# Toolchain (compiler, linker, ...) if you are using kernel 2.4 (korebot-tools-0.1.2)
+#CC			:= arm-linux-gcc
+#AR			:= arm-linux-ar
+
+# Toolchain (compiler, linker, ...) if you are using kernel 2.6 (korebot-oetools-1.0)
+CC			:= arm-angstrom-linux-gnueabi-gcc
+AR			:= arm-angstrom-linux-gnueabi-ar
+
+#########################################################
+
+# Preparing files and flags
+SRCS		:= $(wildcard *.cpp)
+OBJS		:= $(SRCS:%.cpp=%.o)
+MODS		:= $(MODS_ADD)
+MODS		:= $(MODS) $(foreach MOD,$(MY_MODULES),$(MOD)/*.a)
+MODS		:= $(MODS) $(foreach MOD,$(MODULES),$(K3_ROOT)/Modules/$(MOD)/$(MOD).a)
+INCS		:= $(INCS_ADD)
+INCS		:= $(INCS) $(foreach MOD,$(MY_MODULES),-I $(MOD))
+INCS		:= $(INCS) $(foreach MOD,$(MODULES),-I $(K3_ROOT)/Modules/$(MOD))
+LIBS		:= -lm $(LIBS_ADD)
+CFLAGS		:= 
+
+$(ARCHIVE): $(OBJS)
+	@echo "=== Building $@"
+	$(AR) -r $@ $(OBJS)
+
+.PHONY: all
+all: $(ARCHIVE)
+
+.PHONY: clean
+clean:
+	@echo "=== Cleaning"
+	rm -f *.o .depend $(ARCHIVE) *~
+
+.PHONY: depend
+depend:
+	@echo "=== Building dependencies"
+	rm -f .depend
+	touch .depend
+	makedepend $(SYS_INCLUDES) $(INCS) -Y -f .depend $(SRCS)
+
+%.o: %.cpp
+	@echo "=== Compiling $@"
+	$(CXX) -Wall $(INCS) -c $(CFLAGS) $< -o $@
+
+ifeq (.depend,$(wildcard .depend))
+include .depend 
+endif

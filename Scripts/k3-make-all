@@ -1,0 +1,32 @@
+#! /usr/bin/perl
+use strict;
+
+# Get the operation to pass to make (e.g. clean)
+my $operation=shift;
+
+# Get list of files and directories
+opendir(D, '.');
+my @files=readdir(D);
+closedir(D);
+
+# Compile each directory
+my %results;
+foreach my $file (@files) {
+	next if (! -d $file);
+	next if ($file =~ /^\./);
+
+	print $file, "\n";
+	if (length $operation) {
+		$results{$file}=system('make', '-C', $file, $operation);
+	} else {
+		$results{$file}=system('make', '-C', $file);
+	}
+}
+
+# Print a compilation report
+print "\n";
+print 'Make report:', "\n";
+foreach my $file (sort keys %results) {
+	print ($results{$file} == 0 ? '  OK    ' : '  ERROR ');
+	print $file, "\n";
+}
