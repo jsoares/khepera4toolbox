@@ -9,8 +9,8 @@ MODULES	:= commandline khepera4 i2cal
 # The file name of the executable
 TARGET	:= motor_resetposition
 
-# If the K3_ROOT environment variable is set, you can comment out the following line
-K3_ROOT	:= ../..
+# If the K4_ROOT environment variable is set, you can comment out the following line
+K4_ROOT	:= ../..
 
 # Include the Makefile
-include $(K3_ROOT)/Programs/Makefile.include
+include $(K4_ROOT)/Programs/Makefile.include

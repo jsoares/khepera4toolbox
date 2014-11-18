@@ -12,7 +12,7 @@ MODULES	:= relativepositionboard windsensorboard i2c_stream i2cal nmea khepera4
 # The file name of the executable
 TARGET	:= relativepositionboard_full_calibration
 
-# If the K3_ROOT environment variable is set, you can comment out the following line
+# If the K4_ROOT environment variable is set, you can comment out the following line
 LIBS_ADD := -lpthread
 
 CFLAGS_ADD := -O3 -fno-strict-aliasing

@@ -1,3 +1,0 @@
-The current folder contains a C++ interface to the Khepera IV Toolbox. Note that the current version only includes a C++ interface to the "khepera4" module.
-
-The C++ interface is maintained by Bob Andries.

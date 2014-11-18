@@ -234,9 +234,11 @@
               </df>
             </df>
           </df>
+          <in>cmdline.c</in>
+          <in>cmdline.h</in>
           <in>communication.c</in>
           <in>communication.h</in>
-          <in>kh3_utils.h</in>
+          <in>kh4_utils.h</in>
           <in>main.c</in>
         </df>
         <df name="relativepositionboard_start">
@@ -334,7 +336,7 @@
     <conf name="Default" type="0">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <platform>3</platform>
+        <platform>2</platform>
       </toolsSet>
       <compile>
         <compiledirpicklist>
