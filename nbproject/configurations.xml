@@ -2,36 +2,6 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
-      <df name="Examples">
-        <df name="infrared_proximity_sensor_response">
-          <in>plot_results.m</in>
-        </df>
-        <df name="measure_real_speed">
-          <df name="measure_real_speed">
-            <in>main.c</in>
-          </df>
-          <in>plot_results.m</in>
-        </df>
-        <df name="plot_battery_voltage">
-          <in>plot_battery_voltage.m</in>
-        </df>
-      </df>
-      <df name="Interfaces">
-        <df name="C++">
-          <df name="Modules">
-            <df name="khepera4_cpp">
-              <in>khepera4_cpp.cpp</in>
-            </df>
-          </df>
-        </df>
-        <df name="Webots">
-          <in>khepera4.c</in>
-          <in>khepera4_drive.c</in>
-          <in>khepera4_infrared.c</in>
-          <in>khepera4_ultrasound.c</in>
-          <in>odometry_track.c</in>
-        </df>
-      </df>
       <df name="Modules">
         <df name="commandline">
           <in>commandline.c</in>
@@ -314,52 +284,6 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="Examples/infrared_proximity_sensor_response/plot_results.m"
-            ex="false"
-            tool="0"
-            flavor2="2">
-      </item>
-      <item path="Examples/measure_real_speed/measure_real_speed/main.c"
-            ex="false"
-            tool="0"
-            flavor2="2">
-      </item>
-      <item path="Examples/measure_real_speed/plot_results.m"
-            ex="false"
-            tool="0"
-            flavor2="2">
-        <cTool>
-          <incDir>
-            <pElem>Examples/measure_real_speed</pElem>
-          </incDir>
-        </cTool>
-      </item>
-      <item path="Examples/plot_battery_voltage/plot_battery_voltage.m"
-            ex="false"
-            tool="0"
-            flavor2="2">
-      </item>
-      <item path="Interfaces/C++/Modules/khepera4_cpp/khepera4_cpp.cpp"
-            ex="false"
-            tool="1"
-            flavor2="4">
-      </item>
-      <item path="Interfaces/Webots/khepera4.c" ex="false" tool="0" flavor2="2">
-      </item>
-      <item path="Interfaces/Webots/khepera4_drive.c" ex="false" tool="0" flavor2="2">
-      </item>
-      <item path="Interfaces/Webots/khepera4_infrared.c"
-            ex="false"
-            tool="0"
-            flavor2="2">
-      </item>
-      <item path="Interfaces/Webots/khepera4_ultrasound.c"
-            ex="false"
-            tool="0"
-            flavor2="2">
-      </item>
-      <item path="Interfaces/Webots/odometry_track.c" ex="false" tool="0" flavor2="2">
-      </item>
       <item path="Modules/commandline/commandline.c" ex="false" tool="0" flavor2="2">
       </item>
       <item path="Modules/i2c_stream/Documents/test_protocol_dynamics.m"
@@ -741,34 +665,6 @@
             tool="0"
             flavor2="2">
       </item>
-      <folder path="0/Examples/infrared_proximity_sensor_response">
-        <cTool>
-          <incDir>
-            <pElem>Examples/infrared_proximity_sensor_response</pElem>
-          </incDir>
-        </cTool>
-      </folder>
-      <folder path="0/Examples/measure_real_speed/measure_real_speed">
-        <cTool>
-          <incDir>
-            <pElem>Examples/measure_real_speed/measure_real_speed</pElem>
-          </incDir>
-        </cTool>
-      </folder>
-      <folder path="0/Examples/plot_battery_voltage">
-        <cTool>
-          <incDir>
-            <pElem>Examples/plot_battery_voltage</pElem>
-          </incDir>
-        </cTool>
-      </folder>
-      <folder path="0/Interfaces">
-        <cTool>
-          <incDir>
-            <pElem>Interfaces/Webots</pElem>
-          </incDir>
-        </cTool>
-      </folder>
       <folder path="0/Modules/commandline">
         <cTool>
           <incDir>

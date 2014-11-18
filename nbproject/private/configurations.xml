@@ -3,52 +3,11 @@
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
       <df name="Examples">
-        <df name="i2c_odorboard">
-        </df>
-        <df name="infrared_proximity_sensor_response">
-          <in>plot_results.m</in>
-        </df>
-        <df name="measure_real_speed">
-          <df name="measure_real_speed">
-            <in>main.c</in>
-          </df>
-          <in>plot_results.m</in>
-        </df>
         <df name="odometry_calibration">
-        </df>
-        <df name="plot_battery_voltage">
-          <in>plot_battery_voltage.m</in>
-        </df>
-      </df>
-      <df name="InstallScripts">
-        <df name="network">
-        </df>
-        <df name="profile">
         </df>
       </df>
       <df name="Interfaces">
-        <df name="C++">
-          <df name="Modules">
-            <df name="khepera4_cpp">
-              <in>khepera4_cpp.cpp</in>
-              <in>khepera4_cpp.h</in>
-            </df>
-          </df>
-          <df name="Programs">
-          </df>
-        </df>
         <df name="Webots">
-          <in>khepera4.c</in>
-          <in>khepera4.h</in>
-          <in>khepera4_drive.c</in>
-          <in>khepera4_drive.h</in>
-          <in>khepera4_infrared.c</in>
-          <in>khepera4_infrared.h</in>
-          <in>khepera4_motor.h</in>
-          <in>khepera4_ultrasound.c</in>
-          <in>khepera4_ultrasound.h</in>
-          <in>odometry_track.c</in>
-          <in>odometry_track.h</in>
         </df>
       </df>
       <df name="Modules">
@@ -234,8 +193,6 @@
               </df>
             </df>
           </df>
-          <in>cmdline.c</in>
-          <in>cmdline.h</in>
           <in>communication.c</in>
           <in>communication.h</in>
           <in>kh4_utils.h</in>
@@ -328,6 +285,8 @@
         </df>
       </df>
       <df name="Scripts">
+      </df>
+      <df name="Setup">
       </df>
     </df>
   </logicalFolder>
