@@ -1,4 +1,0 @@
-alias l='ls -lsa'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias vim='vi'
