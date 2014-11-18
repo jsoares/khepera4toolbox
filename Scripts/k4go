@@ -1,0 +1,38 @@
+#! /usr/bin/perl
+use strict;
+
+# Include the k4-commons file
+my $basepath=($0 =~ /(.*)\/(.*?)/)[0];
+require $basepath.'/k4-commons', 'INCLUDED';
+
+# Parse the command line
+while (my $cmd=shift) {
+	if ($cmd =~ /^\+(.*)$/) {
+		&robotlist_add($1);
+	} else {
+		&help();
+	}
+}
+
+# Prepare and check
+my @robotlist=&robotlist_get();
+&help('No robot specified.') if (! scalar @robotlist);
+&help('You can only open one interactive shell at the time.') if (scalar @robotlist > 1);
+
+# Connect to each robot
+foreach my $robotip (@robotlist) {
+	&print_and_execute('ssh', 'root@'.$robotip);
+}
+
+# Help
+sub help {
+	if (my $err=shift) {
+		print $err, "\n";
+		print "\n";
+	}
+
+	print 'Connects via SSH to one robot and opens an interactive shell.', "\n";
+	print 'Usage: k4go +ROBOT', "\n";
+	print '    +ROBOT     Robot ID (e.g. 200), IP (e.g. 192.168.141.200) or name (e.g. bob)', "\n";
+	exit(1);
+}

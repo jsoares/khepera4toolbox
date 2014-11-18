@@ -1,0 +1,38 @@
+#! /usr/bin/perl
+use strict;
+
+# Include the k4-commons file
+my $basepath=($0 =~ /(.*)\/(.*?)/)[0];
+require $basepath.'/k4-commons', 'INCLUDED';
+
+# Parse the command line
+while (my $cmd=shift) {
+	if ($cmd =~ /^\+(.*)$/) {
+		&robotlist_add($1);
+	} else {
+		&help();
+	}
+}
+
+# Prepare and check
+my @robotlist=&robotlist_get();
+&help('No robots specified.') if (! scalar @robotlist);
+
+# Report the disk usage of each robot
+foreach my $robotip (@robotlist) {
+	print $robotip, ': ';
+	system('ssh', 'root@'.$robotip, 'df -h | grep "\/dev\/root\|\/dev\/.static\/dev"');
+}
+
+# Help
+sub help {
+	if (my $err=shift) {
+		print $err, "\n";
+		print "\n";
+	}
+
+	print 'Reports disk usage (root partition) of each robot.', "\n";
+	print 'Usage: k4-diskusage +ROBOT1 +ROBOT2 ...', "\n";
+	print '    +ROBOTx    Robot ID (e.g. 200), IP (e.g. 192.168.141.200) or name (e.g. bob)', "\n";
+	exit(1);
+}

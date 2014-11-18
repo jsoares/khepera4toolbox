@@ -4,10 +4,10 @@
 #
 
 # List of standard modules that this program needs
-MODULES	:= relativepositionboard windsensorboard i2c_stream i2cal nmea khepera3
+MODULES	:= relativepositionboard windsensorboard i2c_stream i2cal nmea khepera4
 
 # List of modules that you created on your own (and path to your modules)
-#MY_MODULES	:= ../../Khepera3Modules/relativepositionboard ../../../WindSensorBoard/Khepera3Modules/windsensorboard
+#MY_MODULES	:= ../../Khepera4Modules/relativepositionboard ../../../WindSensorBoard/Khepera4Modules/windsensorboard
 
 # The file name of the executable
 TARGET	:= relativepositionboard_full_calibration

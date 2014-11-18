@@ -14,7 +14,7 @@ MODULES	:= i2cal i2c_stream nmea
 ARCHIVE	:= relativepositionboard.a
 
 # If the K3_ROOT environment variable is set, you can comment out the following line
-#K3_ROOT	:= /Users/thomas/svn/khepera3toolbox/Scripts/..
+#K3_ROOT	:= /Users/thomas/svn/khepera4toolbox/Scripts/..
 
 # Include the Makefile
 include $(K3_ROOT)/Modules/Makefile.include

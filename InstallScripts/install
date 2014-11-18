@@ -12,7 +12,7 @@ print 'Each command (and there are many of them) requires you to type the robot\
 print 'unless you have ssh public key authentication set up. You can easily setup public key', "\n";
 print 'authentication with', "\n";
 print '    k3-ssh-keysetup +usb', "\n";
-print 'of the Khepera III Toolbox.', "\n";
+print 'of the Khepera IV Toolbox.', "\n";
 
 # Get the robot ID from the robot, or ask the user to type it
 my $robotid=shift;

@@ -1,7 +1,7 @@
-Khepera III Toolbox
+Khepera IV Toolbox
 ================================================================================
 
-Welcome to the Khepera III Toolbox!
+Welcome to the Khepera IV Toolbox!
 
 This README file contains only a few pointers and quick start information. The
 official documentation of this toolbox is available online as wikibook:
@@ -11,10 +11,10 @@ for new users and a lot of examples.
 
 For a very quick start, here is how you have to set your environment variables
 in order to use the toolbox:
-	export K3_ROOT=/path/to/the/khepera3toolbox
+	export K3_ROOT=/path/to/the/khepera4toolbox
 	export PATH=$PATH:$K3_ROOT/Scripts
 
-Enjoy working with the Khepera III robot!
+Enjoy working with the Khepera IV robot!
 
 --------------------------------------------------------------------------------
 Main developer (and contact for bug reports, comments and feature requests):

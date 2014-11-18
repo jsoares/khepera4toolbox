@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 use strict;
 
-# Khepera III Toolbox / Install Scripts
+# Khepera IV Toolbox / Install Scripts
 # Author: Thomas Lochmatter, thomas.lochmatter@epfl.ch
 
 # Configuration
@@ -15,4 +15,4 @@ print '=== Copying profile to ', $sshhost, ' ===', "\n";
 
 # Copy files
 system($ssh, $sshuserhost, 'mkdir /etc/profile.d');
-system($scp, 'profile/khepera3toolbox', $sshuserhost.':/etc/profile.d/');
+system($scp, 'profile/khepera4toolbox', $sshuserhost.':/etc/profile.d/');

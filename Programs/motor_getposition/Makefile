@@ -4,7 +4,7 @@
 #
 
 # The list of modules that this program needs
-MODULES	:= commandline measurement khepera3 i2cal
+MODULES	:= commandline measurement khepera4 i2cal
 
 # The file name of the executable
 TARGET	:= motor_getposition

@@ -4,7 +4,7 @@
 #
 
 # The list of modules that this program needs
-MODULES	:= commandline khepera3 i2cal measurement
+MODULES	:= commandline khepera4 i2cal measurement
 
 # The file name of the executable
 TARGET	:= infrared_ambient

@@ -12,17 +12,19 @@
 #define I2C_STREAM_BLOCKSTATUS_EMPTY 0
 
 struct sI2CStreamRead {
-	struct {
-		int device;
-		int reg;
-		int block_size;
-		int blocks_count_max;
-	} configuration;
-	struct {
-		int blockstatus_last;
-		int blocks_count;
-		struct i2c_msg *message;
-	} result;
+
+    struct {
+        int device;
+        int reg;
+        int block_size;
+        int blocks_count_max;
+    } configuration;
+
+    struct {
+        int blockstatus_last;
+        int blocks_count;
+        struct i2c_msg *message;
+    } result;
 };
 
 // Initialization

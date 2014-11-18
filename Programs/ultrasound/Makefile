@@ -4,7 +4,7 @@
 #
 
 # The list of modules that this program needs
-MODULES	:= khepera3 commandline measurement i2cal
+MODULES	:= khepera4 commandline measurement i2cal
 
 # The file name of the executable
 TARGET	:= ultrasound

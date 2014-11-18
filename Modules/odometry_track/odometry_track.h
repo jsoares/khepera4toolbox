@@ -7,21 +7,24 @@
 #define ODOMETRY_TRACK
 
 struct sOdometryTrack {
-	struct {
-		int is_default;
-		float wheel_distance;
-		float wheel_conversion_left;
-		float wheel_conversion_right;
-	} configuration;
-	struct {
-		int pos_left_prev;
-		int pos_right_prev;
-	} state;
-	struct {
-		float x;
-		float y;
-		float theta;
-	} result;
+
+    struct {
+        int is_default;
+        float wheel_distance;
+        float wheel_conversion_left;
+        float wheel_conversion_right;
+    } configuration;
+
+    struct {
+        int pos_left_prev;
+        int pos_right_prev;
+    } state;
+
+    struct {
+        float x;
+        float y;
+        float theta;
+    } result;
 };
 
 //! Initializes this module.

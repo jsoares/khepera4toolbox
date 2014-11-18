@@ -7,13 +7,13 @@
 #define MEASUREMENT
 
 struct sMeasurementConfiguration {
-	int repeat;
-	int fast;
-	int wait_us;
-	void (*hook_measure)(int i);
-	void (*hook_print)(int i);
-	void (*hook_flush)();
-	int log_size;
+    int repeat;
+    int fast;
+    int wait_us;
+    void (*hook_measure)(int i);
+    void (*hook_print)(int i);
+    void (*hook_flush)();
+    int log_size;
 };
 
 struct sMeasurementConfiguration measurement_configuration;

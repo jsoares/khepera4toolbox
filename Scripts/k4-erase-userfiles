@@ -1,0 +1,45 @@
+#! /usr/bin/perl
+use strict;
+
+# Include the k4-commons file
+my $basepath=($0 =~ /(.*)\/(.*?)/)[0];
+require $basepath.'/k4-commons', 'INCLUDED';
+
+# Parse the command line
+my @users;
+while (my $cmd=shift) {
+	if ($cmd =~ /^\+(.*)$/) {
+		&robotlist_add($1);
+	} else {
+		$cmd =~ s/[^a-zA-Z0-9]//g;
+		push @users, $cmd;
+	}
+}
+
+# Prepare and check
+my @robotlist=&robotlist_get();
+&help('No robots specified.') if (! scalar @robotlist);
+if (! scalar @users) {
+	push @users, ($ENV{'USER'} || 'unknown_user');
+}
+
+# Erase the folders of the specified users
+foreach my $robotip (@robotlist) {
+	foreach my $user (@users) {
+		&print_and_execute('ssh', 'root@'.$robotip, 'rm -r '.$user);
+	}
+}
+
+# Help
+sub help {
+	if (my $err=shift) {
+		print $err, "\n";
+		print "\n";
+	}
+
+	print 'Erases the folder of the specified user on the robot.', "\n";
+	print 'Usage: k4-erase-userfiles [USER] +ROBOT1 +ROBOT2 ...', "\n";
+	print '    USER       the user whose files shall be deleted (by default $USER)', "\n";
+	print '    +ROBOTx    Robot ID (e.g. 200), IP (e.g. 192.168.141.200) or name (e.g. bob)', "\n";
+	exit(1);
+}

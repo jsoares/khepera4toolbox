@@ -4,7 +4,7 @@
 #
 
 # The list of modules that this program needs
-MODULES	:= commandline khepera3 i2cal
+MODULES	:= commandline khepera4 i2cal
 
 # The file name of the executable
 TARGET	:= motor_gotoposition

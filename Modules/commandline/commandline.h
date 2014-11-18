@@ -7,17 +7,17 @@
 #define COMMANDLINE
 
 enum eCommandLineOptionType {
-	cCommandLine_Option,				//!< A simple option which doesn't need any further arguments (e.g. -h for help).
-	cCommandLine_Option_Value,			//!< An option which takes one arguments (e.g. -r 10).
+    cCommandLine_Option, //!< A simple option which doesn't need any further arguments (e.g. -h for help).
+    cCommandLine_Option_Value, //!< An option which takes one arguments (e.g. -r 10).
 };
 
 struct sCommandLineOption {
-	enum eCommandLineOptionType type;	//!< Type.
-	const char *option_short;			//!< Short form (e.g. -h), if any.
-	const char *option_long;			//!< Long form (e.g. --help), if any.
-	int provided;						//!< If this option was provided on the command line (-1) or not (0).
-	char *value;						//!< Value, if any.
-	void (*hook)(struct sCommandLineOption *option);	//!< Hook function, if any.
+    enum eCommandLineOptionType type; //!< Type.
+    const char *option_short; //!< Short form (e.g. -h), if any.
+    const char *option_long; //!< Long form (e.g. --help), if any.
+    int provided; //!< If this option was provided on the command line (-1) or not (0).
+    char *value; //!< Value, if any.
+    void (*hook)(struct sCommandLineOption *option); //!< Hook function, if any.
 };
 
 #define COMMANDLINE_HASH_SIZE 64

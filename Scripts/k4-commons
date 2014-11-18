@@ -1,0 +1,67 @@
+#! /usr/bin/perl
+use strict;
+
+# This is not a real Khepera IV script, but a file with common functions used by other scripts.
+# This file also contains a series of configuration values, which allow you to adapt the script to your needs. Note, however, that the documentation assumes that you leave this file unchanged!
+
+sub WLAN_BASE_IP {'192.168.141.'}
+sub WLAN_COMPUTER_IP {'192.168.141.1'}
+sub USBNET_ROBOT_IP {'192.168.1.2'}
+sub USBNET_COMPUTER_IP {'192.168.1.1'}
+
+my @robotlist;
+my %predefinedrobots=('usb' => USBNET_ROBOT_IP);
+
+# Adds a robot (or a fleet of robots) to the list
+sub robotlist_add {
+	my $robot=shift;
+
+	# Cut leading and trailing whitespace
+	$robot=$1 if ($robot =~ /^\s*(.*)\s*$/);
+
+	# Add the robot(s)
+	if ($robot eq '') {
+	} elsif ($robot =~ /[\s,]/) {
+		# Multiple arguments - process each of them separately
+		my @list=split(/[\s,]+/, $robot);
+		foreach my $item (@list) {
+			&robotlist_add($item);
+		}
+	} elsif ($robot =~ /^\++(.*)$/) {
+		# One or more plus signs at the beginning - cut them away
+		&robotlist_add($1);
+	} elsif (exists $predefinedrobots{lc($robot)}) {
+		# A predefined robot name - process that
+		&robotlist_add($predefinedrobots{lc($robot)});
+	} elsif ($robot =~ /^\d+$/) {
+		# A numeric robot ID (e.g. 200) - add the corresponding IP address
+		push @robotlist, WLAN_BASE_IP.$robot;
+	} elsif ($robot =~ /^(\d+)-(\d+)$/) {
+		# A robot ID range (e.g. 200-205) - add all IP addresses
+		my $range_from=$1;
+		my $range_to=$2;
+		foreach my $item ($range_from..$range_to) {
+			&robotlist_add($item);
+		}
+	} elsif ($robot =~ /^\d+\.\d+\.\d+\.\d+$/) {
+		# An IPv4 address (e.g. 192.168.141.200) - add this
+		push @robotlist, $robot;
+	} else {
+		# A name - look it up in the environment variables (e.g. bob -> $ENV{'K4_BOB'}) and process that
+		my $fleet=$ENV{'K4_'.uc($robot)} || die 'Environment variable K4_'.uc($robot).' not defined!';
+		&robotlist_add($fleet);
+	}
+}
+
+# Returns the list of robots.
+sub robotlist_get {
+	return @robotlist;
+}
+
+# Prints a command and executes it afterwards
+sub print_and_execute {
+	print join(' ', @_), "\n";
+	return system(@_);
+}
+
+1;

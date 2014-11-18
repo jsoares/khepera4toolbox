@@ -1,0 +1,29 @@
+#! /usr/bin/perl
+use strict;
+
+# Get the selected nmea command
+my $nmea_command=shift;
+&help() if (! $nmea_command);
+&help() if ($nmea_command =~ /^\-/);
+
+while (my $line=<>) {
+	while (chomp $line) {}
+	if ($line =~ /^\$$nmea_command,(.*)$/i) {
+		my $values=$1;
+		print $values, "\n";
+	}
+}
+
+
+# Help
+sub help {
+	if (my $err=shift) {
+		print $err, "\n";
+		print "\n";
+	}
+
+	print 'Extracts NMEA records and stores their values as CSV file.', "\n";
+	print 'Usage: k4-nmea-to-csv NMEA_COMMAND', "\n";
+	print '    NMEA_COMMAND    The nmea command of the records to process. All other records are ignored.', "\n";
+	exit(1);
+}

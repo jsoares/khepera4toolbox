@@ -29,47 +29,47 @@ WK3_PORTABLE. This makefile should be something like this:
 *****************************************************************
 
 The code this library owns has been made trying to respect faithfully
-khepera3toolbox' code style. So future improvement and modifications
+khepera4toolbox' code style. So future improvement and modifications
 can be made easily by anyone familiar with the toolbox.
 
 
 For using this library you just need to add
-	#include <khepera3.h>
+	#include <khepera4.h>
 in the source code of your Webots controller program.
 
 
-Khepera3 module has been implemented, and it includes these submodules:
+Khepera4 module has been implemented, and it includes these submodules:
 		
-	KHEPERA3: defines the "sKhepera3" structure and initialization
+	KHEPERA4: defines the "sKhepera4" structure and initialization
 	functions. It includes every Webots header needed for correct
 	operation. A defined "control_step" variable is set to 32 ms by
-	default in khepera3.h, present at every sudmodule needed
+	default in khepera4.h, present at every sudmodule needed
 	(e.g. infrared and ultrasound).
 
-	KHEPERA3_DRIVE: you can set motors speed and differential
+	KHEPERA4_DRIVE: you can set motors speed and differential
 	speed. Also get and set current position from encoders.
 
-	KHEPERA3_MOTOR: defines the motor structure for later use in
-	"khepera3_drive" submodule. No more things were implemented as
+	KHEPERA4_MOTOR: defines the motor structure for later use in
+	"khepera4_drive" submodule. No more things were implemented as
 	they were useless. Main motor control is defined at
-	"khepera3_drive".
+	"khepera4_drive".
 
-	KHEPERA3_INFRARED: defines the "khepera3_infrared_proximity"
+	KHEPERA4_INFRARED: defines the "khepera4_infrared_proximity"
 	function and creates a numerical index of each sensor. Does
-	not define "khepera3_infrared_ambient".
+	not define "khepera4_infrared_ambient".
 
-	KHEPERA3_ULTRASOUND: defines everything previously defined in
-	khepera3toolbox and initializes each sensor structure,
+	KHEPERA4_ULTRASOUND: defines everything previously defined in
+	khepera4toolbox and initializes each sensor structure,
 	setting only the first value of their fields. This task is
 	implemented in "ultrasound_structure_init". Amplitude field
-	is defined as 1 in "khepera3_ultrasound.h". These functions have
+	is defined as 1 in "khepera4_ultrasound.h". These functions have
     not been tested.
 
 The "odometry_track" module has been implemented:
 
 The values of WHEEL_RADIUS 0.0212, AXLE_LENGTH 0.0893, and
 ENCODER_RESOLUTION 440 have been added as #define to use the values
-of the Webots model of the Khepera III.
+of the Webots model of the Khepera IV.
 
 **************
 * Maintainer *

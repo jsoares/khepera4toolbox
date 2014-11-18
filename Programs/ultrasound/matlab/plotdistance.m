@@ -25,14 +25,14 @@ hold off;
 
 function plotdistanceone(dist, data, thres)
 
-sel=find(data(:, 2)>thres);
-data=data(sel, :);
+sel = find(data( :, 2) > thres);
+data = data(sel, :);
 
-maxamplitude=max(data(:, 2));
-minamplitude=min(data(:, 2));
-for i=1:size(data, 1);
-	H=rectangle('Position', [dist-0.5, data(i, 3)-0.01, 1, 0.02], 'Curvature', [1, 1]);
-	c=1-(data(i, 2)-minamplitude)/(maxamplitude-minamplitude);
-	set(H, 'FaceColor', [c, c, c])
-	set(H, 'EdgeColor', [c, c, c])
+maxamplitude = max(data( :, 2));
+minamplitude = min(data( :, 2));
+for i = 1 : size(data, 1);
+H = rectangle('Position', [dist - 0.5, data(i, 3) - 0.01, 1, 0.02], 'Curvature', [1, 1]);
+c = 1 - (data(i, 2) - minamplitude) / (maxamplitude - minamplitude);
+set(H, 'FaceColor', [c, c, c])
+set(H, 'EdgeColor', [c, c, c])
 end

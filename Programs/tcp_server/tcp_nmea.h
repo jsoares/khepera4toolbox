@@ -10,12 +10,13 @@
 #include <stdio.h>
 
 // TCP NMEA structure
+
 struct sTCPNMEA {
-	int server_filehandle;					// The filehandle of the listener socket.
-	int connection_filehandle;				// The filehandle of the connection. (Note that only one connection is accepted, i.e. any new connection closes the current one.)
-	FILE *connection_file;
-	struct sNMEAParser parser;		// The parser.
-	void (*hook_process_message)(struct sNMEAMessage *m, int withchecksum);	// The process message hook.
+    int server_filehandle; // The filehandle of the listener socket.
+    int connection_filehandle; // The filehandle of the connection. (Note that only one connection is accepted, i.e. any new connection closes the current one.)
+    FILE *connection_file;
+    struct sNMEAParser parser; // The parser.
+    void (*hook_process_message)(struct sNMEAMessage *m, int withchecksum); // The process message hook.
 };
 
 // Public instance of the structure

@@ -9,68 +9,79 @@
 #include "i2c_stream.h"
 
 enum eWindSensorBoardMode {
-	cWindSensorBoardMode_None = 0,
-	cWindSensorBoardMode_Sample = 1,
-	cWindSensorBoardMode_Calibrate = 2
+    cWindSensorBoardMode_None = 0,
+    cWindSensorBoardMode_Sample = 1,
+    cWindSensorBoardMode_Calibrate = 2
 };
 
 enum eWindSensorBoardLEDMode {
-	cWindSensorBoardLEDMode_Debug = 0,
-	cWindSensorBoardLEDMode_Tracking = 1,
-	cWindSensorBoardLEDMode_TrackingCode = 2,
-	cWindSensorBoardLEDMode_External = 3
+    cWindSensorBoardLEDMode_Debug = 0,
+    cWindSensorBoardLEDMode_Tracking = 1,
+    cWindSensorBoardLEDMode_TrackingCode = 2,
+    cWindSensorBoardLEDMode_External = 3
 };
 
 struct sWindSensorBoard {
-	int device;
-	struct {
-		struct {
-			unsigned int sample_number;
-			unsigned int sensor[6];
-		} last;
-		unsigned int integration;
-		struct sI2CStreamRead stream;
-	} ntc;
-	struct {
-		struct {
-			unsigned int sample_number;
-			unsigned int sensor[6];
-			unsigned int sum;
-		} last;
-		unsigned int baseline;
-		struct sI2CStreamRead stream;
-	} ntc_normalized;
-	struct {
-		enum eWindSensorBoardMode mode;
-		struct {
-			unsigned int sample_number;
-			unsigned int angle_14b;
-			unsigned int likelihood_16b32;
-			float angle;
-			float likelihood;
-		} last;
-		struct sI2CStreamRead stream;
-		struct {
-			unsigned int angle_variance;
-			unsigned int angle_shift;
-			unsigned int full_evaluation_interval;
-			struct {
-				struct {
-					unsigned int mean;
-					unsigned int variance;
-				} sensor[6];
-			} angle[64];
-		} calibration;
-	} windsensor;
-	struct {
-		enum eWindSensorBoardLEDMode mode;
-		struct {
-			int length;
-			int id;
-			int chip_length;
-		} code;
-		int external;
-	} led;
+    int device;
+
+    struct {
+
+        struct {
+            unsigned int sample_number;
+            unsigned int sensor[6];
+        } last;
+        unsigned int integration;
+        struct sI2CStreamRead stream;
+    } ntc;
+
+    struct {
+
+        struct {
+            unsigned int sample_number;
+            unsigned int sensor[6];
+            unsigned int sum;
+        } last;
+        unsigned int baseline;
+        struct sI2CStreamRead stream;
+    } ntc_normalized;
+
+    struct {
+        enum eWindSensorBoardMode mode;
+
+        struct {
+            unsigned int sample_number;
+            unsigned int angle_14b;
+            unsigned int likelihood_16b32;
+            float angle;
+            float likelihood;
+        } last;
+        struct sI2CStreamRead stream;
+
+        struct {
+            unsigned int angle_variance;
+            unsigned int angle_shift;
+            unsigned int full_evaluation_interval;
+
+            struct {
+
+                struct {
+                    unsigned int mean;
+                    unsigned int variance;
+                } sensor[6];
+            } angle[64];
+        } calibration;
+    } windsensor;
+
+    struct {
+        enum eWindSensorBoardLEDMode mode;
+
+        struct {
+            int length;
+            int id;
+            int chip_length;
+        } code;
+        int external;
+    } led;
 };
 
 struct sWindSensorBoard windsensorboard;

@@ -9,37 +9,43 @@
 #include "i2c_stream.h"
 
 enum eOdorBoardLEDMode {
-	cOdorBoardLEDMode_Debug = 0,
-	cOdorBoardLEDMode_Off = 1,
-	cOdorBoardLEDMode_External = 2
+    cOdorBoardLEDMode_Debug = 0,
+    cOdorBoardLEDMode_Off = 1,
+    cOdorBoardLEDMode_External = 2
 };
 
 struct sOdorboard {
-	int device;
-	struct {
-		struct {
-			unsigned int sensor[3];
-			unsigned int sample_number;
-		} last;
-		unsigned int integration;
-		struct sI2CStreamRead stream;
-	} voc;
-	struct {
-		struct {
-			int timestamp;
-			float temperature;
-			float humidity;
-			float dewpoint_temperature;
-		} last;
-		struct sI2CStreamRead stream;
-	} sht11;
-	struct {
-		unsigned int speed[3];
-	} pump;
-	struct {
-		enum eOdorBoardLEDMode mode;
-		int external;
-	} led;
+    int device;
+
+    struct {
+
+        struct {
+            unsigned int sensor[3];
+            unsigned int sample_number;
+        } last;
+        unsigned int integration;
+        struct sI2CStreamRead stream;
+    } voc;
+
+    struct {
+
+        struct {
+            int timestamp;
+            float temperature;
+            float humidity;
+            float dewpoint_temperature;
+        } last;
+        struct sI2CStreamRead stream;
+    } sht11;
+
+    struct {
+        unsigned int speed[3];
+    } pump;
+
+    struct {
+        enum eOdorBoardLEDMode mode;
+        int external;
+    } led;
 };
 
 struct sOdorboard odorboard;

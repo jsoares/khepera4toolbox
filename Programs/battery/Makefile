@@ -4,7 +4,7 @@
 #
 
 # The list of modules that this program needs
-MODULES	:= khepera3 measurement commandline i2cal
+MODULES	:= khepera4 measurement commandline i2cal
 
 # The file name of the executable
 TARGET	:= battery

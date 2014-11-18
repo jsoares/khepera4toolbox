@@ -10,33 +10,36 @@
 #define NMEA_PARSER_RECEIVE_BUFFER_SIZE 128
 
 //! NMEA Message
+
 struct sNMEAMessage {
-	char *command;									//!< Message command
-	char *argument[NMEA_MESSAGE_ARGUMENTS_MAX];		//!< Message arguments
-	unsigned int argument_count;					//!< Number of arguments
+    char *command; //!< Message command
+    char *argument[NMEA_MESSAGE_ARGUMENTS_MAX]; //!< Message arguments
+    unsigned int argument_count; //!< Number of arguments
 };
 
 //! NMEA Parser States
+
 enum eNMEAParserState {
-	cNMEAParserState_None,
-	cNMEAParserState_Argument,
-	cNMEAParserState_Checksum1,
-	cNMEAParserState_Checksum2,
-	cNMEAParserState_Checksum2Discard
+    cNMEAParserState_None,
+    cNMEAParserState_Argument,
+    cNMEAParserState_Checksum1,
+    cNMEAParserState_Checksum2,
+    cNMEAParserState_Checksum2Discard
 };
 
 //! NMEA Parser
-struct sNMEAParser {
-	char receive_buffer[NMEA_PARSER_RECEIVE_BUFFER_SIZE];					//!< (parser state) Receive buffer
-	int receive_buffer_cur;													//!< (parser state) Receive buffer position
-	int checksum;															//!< (parser state) Checksum
-	enum eNMEAParserState state;											//!< (parser state) State
 
-	struct sNMEAMessage message;											//!< Current message
-	void (*hook_process_message)(struct sNMEAMessage *m, int withchecksum);	//!< Called when a complete message has been received
-	void (*hook_process_message_checksum_error)(struct sNMEAMessage *m);	//!< Called when a complete message has been received
-	void (*hook_process_unrecognized_char)(char c);							//!< Called when a char outside a message is processed
-	void (*hook_send)(const char *buffer, int len);							//!< Called when a char outside a message is processed
+struct sNMEAParser {
+    char receive_buffer[NMEA_PARSER_RECEIVE_BUFFER_SIZE]; //!< (parser state) Receive buffer
+    int receive_buffer_cur; //!< (parser state) Receive buffer position
+    int checksum; //!< (parser state) Checksum
+    enum eNMEAParserState state; //!< (parser state) State
+
+    struct sNMEAMessage message; //!< Current message
+    void (*hook_process_message)(struct sNMEAMessage *m, int withchecksum); //!< Called when a complete message has been received
+    void (*hook_process_message_checksum_error)(struct sNMEAMessage *m); //!< Called when a complete message has been received
+    void (*hook_process_unrecognized_char)(char c); //!< Called when a char outside a message is processed
+    void (*hook_send)(const char *buffer, int len); //!< Called when a char outside a message is processed
 };
 
 

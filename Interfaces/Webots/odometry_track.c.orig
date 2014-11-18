@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include "khepera3.h"
+#include "khepera4.h"
 #include "odometry_track.h"
 
 #define WHEEL_RADIUS 0.0212
@@ -20,8 +20,8 @@ void odometry_track_init(int time_ms) {
 }
 
 int odometry_track_start(struct sOdometryTrack * ot) {
-  khepera3_drive_get_current_position();
-  return odometry_track_start_pos(ot, khepera3.motor_left.current_position, khepera3.motor_right.current_position);
+  khepera4_drive_get_current_position();
+  return odometry_track_start_pos(ot, khepera4.motor_left.current_position, khepera4.motor_right.current_position);
 }
 
 int odometry_track_start_pos(struct sOdometryTrack * ot, int pos_left, int pos_right) {
@@ -42,8 +42,8 @@ int odometry_track_start_pos(struct sOdometryTrack * ot, int pos_left, int pos_r
 
 
 void odometry_track_step(struct sOdometryTrack * ot) {
-  khepera3_drive_get_current_position();
-  odometry_track_step_pos(ot, khepera3.motor_left.current_position, khepera3.motor_right.current_position);
+  khepera4_drive_get_current_position();
+  odometry_track_step_pos(ot, khepera4.motor_left.current_position, khepera4.motor_right.current_position);
 }
 
 void odometry_track_step_pos(struct sOdometryTrack * ot, int pos_left, int pos_right) {

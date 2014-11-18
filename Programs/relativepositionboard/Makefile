@@ -7,13 +7,13 @@
 MODULES	:= relativepositionboard commandline i2c_stream i2cal nmea
 
 # List of modules that you created on your own (and path to your modules)
-#MY_MODULES	:= ../../Khepera3Modules/relativepositionboard
+#MY_MODULES	:= ../../Khepera4Modules/relativepositionboard
 
 # The file name of the executable
 TARGET	:= relativepositionboard
 
 # If the K3_ROOT environment variable is set, you can comment out the following line
-#K3_ROOT	:= /Users/thomas/svn/khepera3toolbox/Scripts/..
+#K3_ROOT	:= /Users/thomas/svn/khepera4toolbox/Scripts/..
 
 # Include the Makefile
 include $(K3_ROOT)/Programs/Makefile.include

@@ -4,13 +4,13 @@
  */
 
 struct sMotionArrowKeys {
-	float speed;
-	float direction;
-	float speedstep;
-	float speedlimit;
-	float directionstep;
-	int directiontime[16];
-	int directiontime_write;
+    float speed;
+    float direction;
+    float speedstep;
+    float speedlimit;
+    float directionstep;
+    int directiontime[16];
+    int directiontime_write;
 };
 
 void motion_arrowkeys_init(struct sMotionArrowKeys * motion_arrowkeys);

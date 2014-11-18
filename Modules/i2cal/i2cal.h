@@ -17,14 +17,15 @@
 #define DSPIC_I2C_ADDRESS 0x30
 
 // Data structure holding all buffers for one transaction
+
 struct sI2CAL {
-	struct i2c_msg messages[I2CAL_MESSAGES_LEN];
-	int messages_nw;
-	unsigned char write_buffer[I2CAL_WRITE_BUFFER_LEN];
-	int write_buffer_nw;
-	int write_buffer_start;
-	unsigned char read_buffer[I2CAL_READ_BUFFER_LEN];
-	int read_buffer_nw;
+    struct i2c_msg messages[I2CAL_MESSAGES_LEN];
+    int messages_nw;
+    unsigned char write_buffer[I2CAL_WRITE_BUFFER_LEN];
+    int write_buffer_nw;
+    int write_buffer_start;
+    unsigned char read_buffer[I2CAL_READ_BUFFER_LEN];
+    int read_buffer_nw;
 };
 
 struct sI2CAL i2cal;

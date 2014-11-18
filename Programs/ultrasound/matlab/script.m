@@ -9,4 +9,4 @@ plotdata(8, load('datavar8.txt'), 'Driving towards a wall');
 plotdata(9, load('datavar9.txt'), 'Driving backwards away from a wall, with other obstacles around');
 plotdata(10, load('datavar10.txt'), 'Driving towards a wall, 4.5 m away');
 
-%plotdistance();
+% plotdistance();

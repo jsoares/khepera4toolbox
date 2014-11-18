@@ -9,25 +9,28 @@
 #include "odometry_track.h"
 
 struct sOdometryGoto {
-	struct {
-		int acceleration_step;
-		float speed_max;
-		float speed_min;
-	} configuration;
-	struct sOdometryTrack * track;
-	struct {
-		float goal_x;
-		float goal_y;
-		int speed_left_internal;
-		int speed_right_internal;
-	} state;
-	struct {
-		int speed_left;
-		int speed_right;
-		int closetogoal;
-		int veryclosetogoal;
-		int atgoal;
-	} result;
+
+    struct {
+        int acceleration_step;
+        float speed_max;
+        float speed_min;
+    } configuration;
+    struct sOdometryTrack * track;
+
+    struct {
+        float goal_x;
+        float goal_y;
+        int speed_left_internal;
+        int speed_right_internal;
+    } state;
+
+    struct {
+        int speed_left;
+        int speed_right;
+        int closetogoal;
+        int veryclosetogoal;
+        int atgoal;
+    } result;
 };
 
 //! Initializes this module.

@@ -4,7 +4,7 @@
 #
 
 # List of standard modules that this program needs
-MODULES	:= khepera3 commandline i2cal
+MODULES	:= khepera4 commandline i2cal
 
 # List of modules that you created on your own (and path to your modules)
 #MY_MODULES	:=

@@ -4,7 +4,7 @@
 #
 
 # The list of modules that this program needs
-MODULES	:= khepera3 i2cal commandline odometry_track nmea
+MODULES	:= khepera4 i2cal commandline odometry_track nmea
 
 # The file name of the executable
 TARGET	:= odometry_track

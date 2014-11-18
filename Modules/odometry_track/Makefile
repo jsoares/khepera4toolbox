@@ -4,7 +4,7 @@
 #
 
 # The list of modules that this module needs
-MODULES	:= khepera3 i2cal nmea
+MODULES	:= khepera4 i2cal nmea
 
 # The file name of the archive
 ARCHIVE	:= odometry_track.a

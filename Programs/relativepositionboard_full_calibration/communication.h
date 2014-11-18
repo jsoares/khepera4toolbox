@@ -8,24 +8,23 @@
 #define ROBOT_PORT     4000
 #define BUFFER_LENGTH  256
 
-
 typedef struct communication {
-  int recv_socket;
-  int send_socket;
-  int recv_port;
+    int recv_socket;
+    int send_socket;
+    int recv_port;
 
-  int robot_id;
+    int robot_id;
 
-  pthread_t robot_communication_thread;
+    pthread_t robot_communication_thread;
 
-  // Messages
-  int msg_sender_id;
-  void *msg;
-  int msg_len;
-  int msg_rdy;
+    // Messages
+    int msg_sender_id;
+    void *msg;
+    int msg_len;
+    int msg_rdy;
 
-  // To kill the thread
-  int finish;
+    // To kill the thread
+    int finish;
 } communication_t;
 
 int communication_send_message(communication_t *c, int dest, char *data, int len);

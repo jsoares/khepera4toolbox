@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="Examples">
+        <df name="infrared_proximity_sensor_response">
+          <in>plot_results.m</in>
+        </df>
+        <df name="measure_real_speed">
+          <df name="measure_real_speed">
+            <in>main.c</in>
+          </df>
+          <in>plot_results.m</in>
+        </df>
+        <df name="plot_battery_voltage">
+          <in>plot_battery_voltage.m</in>
+        </df>
+      </df>
+      <df name="Interfaces">
+        <df name="C++">
+          <df name="Modules">
+            <df name="khepera4_cpp">
+              <in>khepera4_cpp.cpp</in>
+            </df>
+          </df>
+        </df>
+        <df name="Webots">
+          <in>khepera4.c</in>
+          <in>khepera4_drive.c</in>
+          <in>khepera4_infrared.c</in>
+          <in>khepera4_ultrasound.c</in>
+          <in>odometry_track.c</in>
+        </df>
+      </df>
+      <df name="Modules">
+        <df name="commandline">
+          <in>commandline.c</in>
+        </df>
+        <df name="i2c_stream">
+          <df name="Documents">
+            <in>test_protocol_dynamics.m</in>
+          </df>
+          <in>i2c_stream.c</in>
+        </df>
+        <df name="i2cal">
+          <in>i2cal.c</in>
+        </df>
+        <df name="khepera4">
+          <in>khepera4.c</in>
+          <in>khepera4_battery.c</in>
+          <in>khepera4_drive.c</in>
+          <in>khepera4_infrared.c</in>
+          <in>khepera4_ultrasound.c</in>
+        </df>
+        <df name="measurement">
+          <in>measurement.c</in>
+        </df>
+        <df name="nmea">
+          <in>nmea.c</in>
+        </df>
+        <df name="odometry_goto">
+          <in>odometry_goto.c</in>
+        </df>
+        <df name="odometry_track">
+          <in>odometry_track.c</in>
+        </df>
+        <df name="odorboard">
+          <in>odorboard.c</in>
+        </df>
+        <df name="relativepositionboard">
+          <in>relativepositionboard.c</in>
+        </df>
+        <df name="template">
+          <in>template.c</in>
+        </df>
+        <df name="windsensorboard">
+          <in>windsensorboard.c</in>
+        </df>
+      </df>
+      <df name="Programs">
+        <df name="battery">
+          <in>main.c</in>
+        </df>
+        <df name="cpu_performance">
+          <in>main.c</in>
+        </df>
+        <df name="i2c">
+          <in>main.c</in>
+        </df>
+        <df name="i2c_stream_read">
+          <in>main.c</in>
+        </df>
+        <df name="infrared_ambient">
+          <in>main.c</in>
+        </df>
+        <df name="infrared_proximity">
+          <in>main.c</in>
+        </df>
+        <df name="memory_performance">
+          <in>main.c</in>
+        </df>
+        <df name="motion_arrowkeys">
+          <in>interactiveinput.c</in>
+          <in>main.c</in>
+          <in>motion_arrowkeys.c</in>
+        </df>
+        <df name="motion_braitenberg">
+          <in>main.c</in>
+        </df>
+        <df name="motion_followline">
+          <in>main.c</in>
+        </df>
+        <df name="motion_forwardbackward">
+          <in>main.c</in>
+        </df>
+        <df name="motion_random">
+          <in>main.c</in>
+        </df>
+        <df name="motion_spiral">
+          <in>main.c</in>
+        </df>
+        <df name="motor_getposition">
+          <df name="matlab">
+            <in>meas.m</in>
+            <in>motget.m</in>
+          </df>
+          <in>main.c</in>
+        </df>
+        <df name="motor_getspeed">
+          <in>main.c</in>
+        </df>
+        <df name="motor_gotoposition">
+          <in>main.c</in>
+        </df>
+        <df name="motor_resetposition">
+          <in>main.c</in>
+        </df>
+        <df name="motor_setspeed">
+          <in>main.c</in>
+        </df>
+        <df name="motor_stop">
+          <in>main.c</in>
+        </df>
+        <df name="odometry_goto">
+          <df name="matlab">
+            <df name="simulation">
+              <in>mygotosimul.m</in>
+            </df>
+          </df>
+          <in>main.c</in>
+        </df>
+        <df name="odometry_track">
+          <df name="matlab">
+            <in>ContStep.m</in>
+            <in>odometry_track.m</in>
+            <in>set2range.m</in>
+          </df>
+          <in>main.c</in>
+        </df>
+        <df name="odorboard_led_external">
+          <in>main.c</in>
+        </df>
+        <df name="odorboard_led_mode">
+          <in>main.c</in>
+        </df>
+        <df name="odorboard_pump_speed">
+          <in>main.c</in>
+        </df>
+        <df name="odorboard_voc">
+          <in>main.c</in>
+        </df>
+        <df name="odorboard_voc_integration">
+          <in>main.c</in>
+        </df>
+        <df name="odorboard_voc_stream">
+          <in>main.c</in>
+        </df>
+        <df name="relativepositionboard">
+          <in>main.c</in>
+        </df>
+        <df name="relativepositionboard_calibration">
+          <in>main.c</in>
+        </df>
+        <df name="relativepositionboard_full_calibration">
+          <df name="scripts">
+            <df name="matlab">
+              <in>extract_run.m</in>
+              <in>extract_training_data.m</in>
+              <in>generate_calibration_file.m</in>
+              <in>learn_parameters.m</in>
+              <in>plot_run.m</in>
+            </df>
+          </df>
+          <in>communication.c</in>
+          <in>main.c</in>
+        </df>
+        <df name="relativepositionboard_start">
+          <in>main.c</in>
+        </df>
+        <df name="relativepositionboard_stop">
+          <in>main.c</in>
+        </df>
+        <df name="relativepositionboard_stream">
+          <in>main.c</in>
+        </df>
+        <df name="relativepositionboard_test">
+          <in>main.c</in>
+        </df>
+        <df name="tcp_server">
+          <in>main.c</in>
+          <in>tcp_nmea.c</in>
+        </df>
+        <df name="template">
+          <in>main.c</in>
+        </df>
+        <df name="test_math">
+          <in>main.c</in>
+        </df>
+        <df name="udp_receiver">
+          <in>main.c</in>
+        </df>
+        <df name="udp_sender">
+          <in>main.c</in>
+        </df>
+        <df name="ultrasound">
+          <df name="matlab">
+            <in>plotdata.m</in>
+            <in>plotdistance.m</in>
+            <in>script.m</in>
+          </df>
+          <in>main.c</in>
+        </df>
+        <df name="ultrasound_enable">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_led_code">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_led_external">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_led_mode">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_ntc">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_ntc_integration">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_ntc_normalized">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_ntc_normalized_baseline">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_ntc_normalized_stream">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_ntc_stream">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_windsensor">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_windsensor_calibration">
+          <df name="matlab">
+            <in>plot_verification.m</in>
+          </df>
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_windsensor_start">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_windsensor_stop">
+          <in>main.c</in>
+        </df>
+        <df name="windsensorboard_windsensor_stream">
+          <in>main.c</in>
+        </df>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>None|Unknown</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>Interfaces/C++/Modules/khepera4_cpp</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="Examples/infrared_proximity_sensor_response/plot_results.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Examples/measure_real_speed/measure_real_speed/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Examples/measure_real_speed/plot_results.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Examples/measure_real_speed</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Examples/plot_battery_voltage/plot_battery_voltage.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Interfaces/C++/Modules/khepera4_cpp/khepera4_cpp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="Interfaces/Webots/khepera4.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Interfaces/Webots/khepera4_drive.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Interfaces/Webots/khepera4_infrared.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Interfaces/Webots/khepera4_ultrasound.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Interfaces/Webots/odometry_track.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/commandline/commandline.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/i2c_stream/Documents/test_protocol_dynamics.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Modules/i2c_stream/i2c_stream.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Modules/i2c_stream</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Modules/i2cal/i2cal.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/khepera4/khepera4.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/khepera4/khepera4_battery.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Modules/khepera4/khepera4_drive.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/khepera4/khepera4_infrared.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Modules/khepera4/khepera4_ultrasound.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Modules/measurement/measurement.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/nmea/nmea.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/odometry_goto/odometry_goto.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Modules/odometry_track/odometry_track.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Modules/odorboard/odorboard.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/relativepositionboard/relativepositionboard.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Modules/template/template.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/windsensorboard/windsensorboard.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/battery/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/cpu_performance/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/i2c/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/i2c_stream_read/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/infrared_ambient/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/infrared_proximity/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/memory_performance/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motion_arrowkeys/interactiveinput.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/motion_arrowkeys/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motion_arrowkeys/motion_arrowkeys.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/motion_braitenberg/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motion_followline/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motion_forwardbackward/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/motion_random/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motion_spiral/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motor_getposition/main.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motor_getposition</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Programs/motor_getposition/matlab/meas.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/motor_getposition/matlab/motget.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/motor_getspeed/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motor_gotoposition/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motor_resetposition/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/motor_setspeed/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/motor_stop/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/odometry_goto/main.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odometry_goto</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Programs/odometry_goto/matlab/simulation/mygotosimul.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/odometry_track/main.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odometry_track</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Programs/odometry_track/matlab/ContStep.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/odometry_track/matlab/odometry_track.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/odometry_track/matlab/set2range.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/odorboard_led_external/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/odorboard_led_mode/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/odorboard_pump_speed/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/odorboard_voc/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/odorboard_voc_integration/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/odorboard_voc_stream/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_calibration/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_full_calibration/communication.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard_full_calibration</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Programs/relativepositionboard_full_calibration/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard_full_calibration</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Programs/relativepositionboard_full_calibration/scripts/matlab/extract_run.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_full_calibration/scripts/matlab/extract_training_data.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_full_calibration/scripts/matlab/generate_calibration_file.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_full_calibration/scripts/matlab/learn_parameters.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_full_calibration/scripts/matlab/plot_run.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_start/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_stop/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_stream/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/relativepositionboard_test/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/tcp_server/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/tcp_server/tcp_nmea.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/template/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/test_math/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/udp_receiver/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/udp_sender/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/ultrasound/main.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Programs/ultrasound</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Programs/ultrasound/matlab/plotdata.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/ultrasound/matlab/plotdistance.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/ultrasound/matlab/script.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/ultrasound_enable/main.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_led_code/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_led_external/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_led_mode/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_ntc/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_ntc_integration/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_ntc_normalized/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_ntc_normalized_baseline/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_ntc_normalized_stream/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_ntc_stream/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_windsensor/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_windsensor_calibration/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_windsensor_calibration</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="Programs/windsensorboard_windsensor_calibration/matlab/plot_verification.m"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_windsensor_start/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_windsensor_stop/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="Programs/windsensorboard_windsensor_stream/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <folder path="0/Examples/infrared_proximity_sensor_response">
+        <cTool>
+          <incDir>
+            <pElem>Examples/infrared_proximity_sensor_response</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Examples/measure_real_speed/measure_real_speed">
+        <cTool>
+          <incDir>
+            <pElem>Examples/measure_real_speed/measure_real_speed</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Examples/plot_battery_voltage">
+        <cTool>
+          <incDir>
+            <pElem>Examples/plot_battery_voltage</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Interfaces">
+        <cTool>
+          <incDir>
+            <pElem>Interfaces/Webots</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/commandline">
+        <cTool>
+          <incDir>
+            <pElem>Modules/commandline</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/i2c_stream/Documents">
+        <cTool>
+          <incDir>
+            <pElem>Modules/i2c_stream/Documents</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/i2cal">
+        <cTool>
+          <incDir>
+            <pElem>Modules/i2cal</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/khepera4">
+        <cTool>
+          <incDir>
+            <pElem>Modules/khepera4</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/measurement">
+        <cTool>
+          <incDir>
+            <pElem>Modules/measurement</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/nmea">
+        <cTool>
+          <incDir>
+            <pElem>Modules/nmea</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/odometry_goto">
+        <cTool>
+          <incDir>
+            <pElem>Modules/odometry_goto</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/odometry_track">
+        <cTool>
+          <incDir>
+            <pElem>Modules/odometry_track</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/odorboard">
+        <cTool>
+          <incDir>
+            <pElem>Modules/odorboard</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/relativepositionboard">
+        <cTool>
+          <incDir>
+            <pElem>Modules/relativepositionboard</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/template">
+        <cTool>
+          <incDir>
+            <pElem>Modules/template</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Modules/windsensorboard">
+        <cTool>
+          <incDir>
+            <pElem>Modules/windsensorboard</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/battery">
+        <cTool>
+          <incDir>
+            <pElem>Programs/battery</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/cpu_performance">
+        <cTool>
+          <incDir>
+            <pElem>Programs/cpu_performance</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/i2c">
+        <cTool>
+          <incDir>
+            <pElem>Programs/i2c</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/i2c_stream_read">
+        <cTool>
+          <incDir>
+            <pElem>Programs/i2c_stream_read</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/infrared_ambient">
+        <cTool>
+          <incDir>
+            <pElem>Programs/infrared_ambient</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/infrared_proximity">
+        <cTool>
+          <incDir>
+            <pElem>Programs/infrared_proximity</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/memory_performance">
+        <cTool>
+          <incDir>
+            <pElem>Programs/memory_performance</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motion_arrowkeys">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motion_arrowkeys</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motion_braitenberg">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motion_braitenberg</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motion_followline">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motion_followline</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motion_forwardbackward">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motion_forwardbackward</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motion_random">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motion_random</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motion_spiral">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motion_spiral</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motor_getposition/matlab">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motor_getposition/matlab</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motor_getspeed">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motor_getspeed</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motor_gotoposition">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motor_gotoposition</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motor_resetposition">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motor_resetposition</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motor_setspeed">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motor_setspeed</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/motor_stop">
+        <cTool>
+          <incDir>
+            <pElem>Programs/motor_stop</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/odometry_goto/matlab">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odometry_goto/matlab/simulation</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/odometry_track/matlab">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odometry_track/matlab</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/odorboard_led_external">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odorboard_led_external</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/odorboard_led_mode">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odorboard_led_mode</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/odorboard_pump_speed">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odorboard_pump_speed</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/odorboard_voc">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odorboard_voc</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/odorboard_voc_integration">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odorboard_voc_integration</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/odorboard_voc_stream">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odorboard_voc_stream</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/relativepositionboard">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/relativepositionboard_calibration">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard_calibration</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/relativepositionboard_full_calibration/scripts">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard_full_calibration/scripts/matlab</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/relativepositionboard_start">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard_start</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/relativepositionboard_stop">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard_stop</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/relativepositionboard_stream">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard_stream</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/relativepositionboard_test">
+        <cTool>
+          <incDir>
+            <pElem>Programs/relativepositionboard_test</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/tcp_server">
+        <cTool>
+          <incDir>
+            <pElem>Programs/tcp_server</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/template">
+        <cTool>
+          <incDir>
+            <pElem>Programs/template</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/test_math">
+        <cTool>
+          <incDir>
+            <pElem>Programs/test_math</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/udp_receiver">
+        <cTool>
+          <incDir>
+            <pElem>Programs/udp_receiver</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/udp_sender">
+        <cTool>
+          <incDir>
+            <pElem>Programs/udp_sender</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/ultrasound/matlab">
+        <cTool>
+          <incDir>
+            <pElem>Programs/ultrasound/matlab</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/ultrasound_enable">
+        <cTool>
+          <incDir>
+            <pElem>Programs/ultrasound_enable</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_led_code">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_led_code</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_led_external">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_led_external</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_led_mode">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_led_mode</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_ntc">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_ntc</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_ntc_integration">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_ntc_integration</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_ntc_normalized">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_ntc_normalized</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_ntc_normalized_baseline">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_ntc_normalized_baseline</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_ntc_normalized_stream">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_ntc_normalized_stream</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_ntc_stream">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_ntc_stream</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_windsensor">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_windsensor</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_windsensor_calibration/matlab">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_windsensor_calibration/matlab</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_windsensor_start">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_windsensor_start</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_windsensor_stop">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_windsensor_stop</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/Programs/windsensorboard_windsensor_stream">
+        <cTool>
+          <incDir>
+            <pElem>Programs/windsensorboard_windsensor_stream</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -3,7 +3,7 @@
  * Thomas Lochmatter
  */
 
-#include "khepera3.h"
+#include "khepera4.h"
 #include "commandline.h"
 #include <termios.h>
 
@@ -61,7 +61,7 @@ void algorithm_init() {
 
 void algorithm_run() {
 	// Put the wheels in normal (control) mode
-	khepera3_drive_start();
+	khepera4_drive_start();
 
 	// Run the state machine
 	algorithm.state.hook = state_measure;
@@ -89,24 +89,24 @@ void state_measure() {
 	double real_time, real_speed;
 
 	// Move forwards
-	khepera3_drive_set_speed(algorithm.configuration.speed, algorithm.configuration.speed);
+	khepera4_drive_set_speed(algorithm.configuration.speed, algorithm.configuration.speed);
 
 	// Initial measurement
-	khepera3_infrared_proximity();
-	floorstate_prev = (khepera3.infrared_proximity.sensor[cKhepera3SensorsInfrared_FloorLeft] < algorithm.configuration.floor_threshold_on);
+	khepera4_infrared_proximity();
+	floorstate_prev = (khepera4.infrared_proximity.sensor[cKhepera4SensorsInfrared_FloorLeft] < algorithm.configuration.floor_threshold_on);
 	if (verbosity>1) {
-		printf("$FLOOR,%d\n", khepera3.infrared_proximity.sensor[cKhepera3SensorsInfrared_FloorLeft]);
+		printf("$FLOOR,%d\n", khepera4.infrared_proximity.sensor[cKhepera4SensorsInfrared_FloorLeft]);
 	}
 
 	// Wait for the first transition
 	while (1) {
-		khepera3_infrared_proximity();
-		floorstate = (khepera3.infrared_proximity.sensor[cKhepera3SensorsInfrared_FloorLeft] < algorithm.configuration.floor_threshold_on);
+		khepera4_infrared_proximity();
+		floorstate = (khepera4.infrared_proximity.sensor[cKhepera4SensorsInfrared_FloorLeft] < algorithm.configuration.floor_threshold_on);
 		if (verbosity>1) {
-			printf("$FLOOR,%d\n", khepera3.infrared_proximity.sensor[cKhepera3SensorsInfrared_FloorLeft]);
+			printf("$FLOOR,%d\n", khepera4.infrared_proximity.sensor[cKhepera4SensorsInfrared_FloorLeft]);
 		}
 		if (floorstate_prev!=floorstate) {
-			floorstate_prev = (khepera3.infrared_proximity.sensor[cKhepera3SensorsInfrared_FloorLeft] < algorithm.configuration.floor_threshold_off);
+			floorstate_prev = (khepera4.infrared_proximity.sensor[cKhepera4SensorsInfrared_FloorLeft] < algorithm.configuration.floor_threshold_off);
 			gettimeofday(&algorithm.state.timestamp1, 0);
 			break;
 		}
@@ -117,10 +117,10 @@ void state_measure() {
 
 	// Wait for the second transition
 	while (1) {
-		khepera3_infrared_proximity();
-		floorstate = (khepera3.infrared_proximity.sensor[cKhepera3SensorsInfrared_FloorLeft] < algorithm.configuration.floor_threshold_off);
+		khepera4_infrared_proximity();
+		floorstate = (khepera4.infrared_proximity.sensor[cKhepera4SensorsInfrared_FloorLeft] < algorithm.configuration.floor_threshold_off);
 		if (verbosity>1) {
-			printf("$FLOOR,%d\n", khepera3.infrared_proximity.sensor[cKhepera3SensorsInfrared_FloorLeft]);
+			printf("$FLOOR,%d\n", khepera4.infrared_proximity.sensor[cKhepera4SensorsInfrared_FloorLeft]);
 		}
 		if (floorstate_prev!=floorstate) {
 			gettimeofday(&algorithm.state.timestamp2, 0);
@@ -140,7 +140,7 @@ void state_measure() {
 
 void state_success() {
 	// Stop the motors
-	khepera3_drive_stop();
+	khepera4_drive_stop();
 	exit(0);
 }
 
@@ -157,7 +157,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	// Initialization
-	khepera3_init();
+	khepera4_init();
 	algorithm_init();
 
 	// Read command line arguments

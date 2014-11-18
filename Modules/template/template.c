@@ -10,13 +10,13 @@ void template_init() {
 }
 
 void template_function1(struct sTemplate *template) {
-	template->variable1 = 3;
-	template->variable2 = 10.5;
+    template->variable1 = 3;
+    template->variable2 = 10.5;
 }
 
 float template_function2(struct sTemplate *template) {
-	float sum;
+    float sum;
 
-	sum = (float)template->variable1 + template->variable2;
-	return sum;
+    sum = (float) template->variable1 + template->variable2;
+    return sum;
 }
