@@ -19,6 +19,7 @@
           <in>khepera4.c</in>
           <in>khepera4_battery.c</in>
           <in>khepera4_drive.c</in>
+          <in>khepera4_imu.c</in>
           <in>khepera4_infrared.c</in>
           <in>khepera4_ultrasound.c</in>
         </df>
@@ -308,6 +309,8 @@
             flavor2="2">
       </item>
       <item path="Modules/khepera4/khepera4_drive.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="Modules/khepera4/khepera4_imu.c" ex="false" tool="0" flavor2="2">
       </item>
       <item path="Modules/khepera4/khepera4_infrared.c"
             ex="false"

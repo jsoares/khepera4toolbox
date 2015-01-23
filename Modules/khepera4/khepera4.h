@@ -23,6 +23,7 @@
 #include "khepera4_infrared.h"
 #include "khepera4_ultrasound.h"
 #include "khepera4_battery.h"
+#include "khepera4_imu.h"
 
 // I2c Address register (from libkhepera)
 #define I2C_REVISION                      0x00
@@ -190,6 +191,7 @@ struct sKhepera4 {
     struct sKhepera4SensorsInfrared infrared_ambient; //!< Infrared sensors in ambient light mode
     struct sKhepera4SensorsInfrared infrared_proximity; //!< Infrared sensors in proximity mode
     struct sKhepera4SensorsUltrasound ultrasound; //!< Ultrasound sensors
+    struct sKhepera4SensorsImu imu; //!< Inertial sensors
     struct sKhepera4Battery battery; //!< Battery information
 };
 

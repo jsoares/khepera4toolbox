@@ -31,7 +31,7 @@ void odometry_track_init() {
 
 int odometry_track_start(struct sOdometryTrack * ot) {
     khepera4_drive_get_current_position();
-    return odometry_track_start_pos(ot, -khepera4.motor_left.current_position, khepera4.motor_right.current_position);
+    return odometry_track_start_pos(ot, khepera4.motor_left.current_position, khepera4.motor_right.current_position);
 }
 
 int odometry_track_start_pos(struct sOdometryTrack * ot, int pos_left, int pos_right) {
@@ -44,9 +44,9 @@ int odometry_track_start_pos(struct sOdometryTrack * ot, int pos_left, int pos_r
 
     // Odometry: default values
     ot->configuration.is_default = 1;
-    ot->configuration.wheel_distance = 0.08841;
-    ot->configuration.wheel_conversion_left = 2 * PI * 0.021 / 2764.8;
-    ot->configuration.wheel_conversion_right = 2 * PI * 0.021 / 2764.8;
+    ot->configuration.wheel_distance = 0.10470;
+    ot->configuration.wheel_conversion_left = 0.13194 / 19456.0; // perimeter over pulses per rev
+    ot->configuration.wheel_conversion_right = 0.13194 / 19456.0;
 
     // Read the odometry configuration file
     odometry_track_read_configuration(ot, "/etc/khepera/odometry");
@@ -92,7 +92,7 @@ void odometry_track_read_configuration(struct sOdometryTrack * ot, const char *f
 
 void odometry_track_step(struct sOdometryTrack * ot) {
     khepera4_drive_get_current_position();
-    odometry_track_step_pos(ot, -khepera4.motor_left.current_position, khepera4.motor_right.current_position);
+    odometry_track_step_pos(ot, khepera4.motor_left.current_position, khepera4.motor_right.current_position);
 }
 
 void odometry_track_step_pos(struct sOdometryTrack * ot, int pos_left, int pos_right) {

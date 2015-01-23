@@ -9,11 +9,6 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/jsoares/khepera4toolbox/Programs/relativepositionboard_full_calibration/Makefile</file>
-            <file>file:/home/jsoares/khepera4toolbox/Programs/relativepositionboard_full_calibration/Makefile.include</file>
-            <file>file:/home/jsoares/khepera4toolbox/Modules/i2c_stream/Makefile</file>
-            <file>file:/home/jsoares/khepera4toolbox/Programs/relativepositionboard_full_calibration/kh4_utils.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -25,9 +25,9 @@ void odometry_goto_init() {
 
 void odometry_goto_start(struct sOdometryGoto * og, struct sOdometryTrack * ot) {
     og->track = ot;
-    og->configuration.acceleration_step = 500.;
-    og->configuration.speed_min = 800.;
-    og->configuration.speed_max = 20000.;
+    og->configuration.acceleration_step = 2.;
+    og->configuration.speed_min = 20.;
+    og->configuration.speed_max = 200.;
     og->state.goal_x = 0.;
     og->state.goal_y = 0.;
     og->state.speed_left_internal = 0;

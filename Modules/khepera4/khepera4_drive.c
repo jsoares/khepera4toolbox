@@ -24,7 +24,7 @@
 /*** Module initialization ***/
 
 void khepera4_drive_init() {
-    khepera4.motor_left.direction = -1;
+    khepera4.motor_left.direction = 1;
     khepera4.motor_right.direction = 1;
 }
 
