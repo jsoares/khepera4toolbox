@@ -150,6 +150,16 @@
           </df>
           <in>main.c</in>
         </df>
+        <df name="odometry_goto_timestamp">
+          <df name="matlab">
+            <df name="simulation">
+              <in>mygotosimul.m</in>
+            </df>
+          </df>
+          <in>main.c</in>
+          <in>timestamp.c</in>
+          <in>timestamp.h</in>
+        </df>
         <df name="odometry_track">
           <df name="matlab">
             <in>ContStep.m</in>
@@ -198,6 +208,8 @@
               </df>
             </df>
           </df>
+          <in>cmdline.c</in>
+          <in>cmdline.h</in>
           <in>communication.c</in>
           <in>communication.h</in>
           <in>kh4_utils.h</in>
@@ -213,6 +225,9 @@
           <in>main.c</in>
         </df>
         <df name="relativepositionboard_test">
+          <in>main.c</in>
+        </df>
+        <df name="rndboard_led_mode">
           <in>main.c</in>
         </df>
         <df name="tcp_server">

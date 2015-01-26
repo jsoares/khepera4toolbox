@@ -120,6 +120,9 @@
           </df>
           <in>main.c</in>
         </df>
+        <df name="odometry_goto_timestamp">
+          <in>main.c</in>
+        </df>
         <df name="odometry_track">
           <df name="matlab">
             <in>ContStep.m</in>
@@ -430,6 +433,16 @@
             ex="false"
             tool="0"
             flavor2="2">
+      </item>
+      <item path="Programs/odometry_goto_timestamp/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>Programs/odometry_goto</pElem>
+          </incDir>
+        </cTool>
       </item>
       <item path="Programs/odometry_track/main.c" ex="false" tool="0" flavor2="2">
         <cTool>

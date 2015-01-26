@@ -104,3 +104,5 @@ Thumbs.db
 /Programs/i2c_stream_read/i2c_stream_read
 /Programs/odorboard_pump_speed/odorboard_pump_speed
 /Programs/imu/imu
+/Programs/odometry_goto_timestamp/odometry_goto_timestamp
+/Programs/rndboard_led_mode/rndboard_led_mode
