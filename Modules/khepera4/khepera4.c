@@ -72,3 +72,10 @@ int khepera4_dspic_firmware_version() {
     khepera4.dspic.firmware_revision = i2cal_readdata_uint16(msg_read, 5);
     return -1;
 }
+
+tTimestamp khepera4_current_time() {
+  struct timeval te; 
+  gettimeofday(&te, NULL);
+  tTimestamp milliseconds = te.tv_sec*1000LL + te.tv_usec/1000; 
+  return milliseconds;
+}

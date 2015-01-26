@@ -28,7 +28,6 @@ struct sKhepera4SensorsImuSample {
     double x;
     double y;
     double z;
-    time_t timestamp;
 };
 
 struct sKhepera4SensorsImu {
@@ -36,10 +35,8 @@ struct sKhepera4SensorsImu {
     struct sKhepera4SensorsImuSample gyro[10];
     struct sKhepera4SensorsImuSample accel_mean;
     struct sKhepera4SensorsImuSample gyro_mean;
-    time_t timestamp;
+    long long timestamp;
 };
-
-
 
 //! (private) Initializes this submodule.
 void khepera4_imu_init();

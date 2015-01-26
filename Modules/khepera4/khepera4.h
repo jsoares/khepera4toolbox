@@ -197,6 +197,8 @@ struct sKhepera4 {
 
 struct sKhepera4 khepera4;
 
+typedef long long tTimestamp;
+
 //! Initializes this module.
 void khepera4_init();
 
@@ -204,5 +206,7 @@ void khepera4_init();
 int khepera4_timestamp_reset();
 //! Reads the firmware version and revision and updates this value in the khepera4 structure. The return value indicates success (-1) or failure (0). Transfer on I2C bus: 11 bytes.
 int khepera4_dspic_firmware_version();
+//! Returns current time in ms
+tTimestamp khepera4_current_time();
 
 #endif

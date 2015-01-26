@@ -38,6 +38,9 @@ int khepera4_imu_p(struct sKhepera4SensorsImu *imu) {
     if (!khepera_dspic_read_register(I2C_GYR_X, bufGyro, 60)) {
         return 0;
     }    
+    
+    // Timestamp the data
+    imu->timestamp = khepera4_current_time();    
 
     // Process data into x,y,z coordinates
     for(i=0; i<10; i++) {
@@ -69,9 +72,6 @@ int khepera4_imu_p(struct sKhepera4SensorsImu *imu) {
     imu->gyro_mean.x /= 10.;
     imu->gyro_mean.y /= 10.;
     imu->gyro_mean.z /= 10.;
-    
-    // Timestamp the data
-    imu->timestamp = time(NULL);
 
     return -1;
 }
