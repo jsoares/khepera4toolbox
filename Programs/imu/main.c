@@ -49,8 +49,10 @@ void help() {
     printf("  imu -ng                Do not print gyroscope messages\n");
     printf("\n");
     printf("Output format:\n");
-    printf("  $ACCEL,sample,timestamp,x,y,z\n");
-    printf("  $GYRO,sample,timestamp,x,y,z\n");    
+    printf("  $ACCEL,sample,timestamp,index,x,y,z\n");
+    printf("  $GYRO,sample,timestamp,index,x,y,z\n");    
+    printf("  $ACCELMEAN,sample,timestamp,x,y,z\n");
+    printf("  $GYROMEAN,sample,timestamp,x,y,z\n");        
     printf("\n");
 }
 
@@ -65,15 +67,17 @@ void measurement_take(int i) {
 // Prints one measurement
 
 void measurement_print(int i) {
-    //int j;
-    //for (j=0; j < 10; j++)
-    //    printf("$GYRO,%d,%u,%f,%f,%f\n", log_buffer[i].sample_number, (unsigned int) log_buffer[i].imu.timestamp, log_buffer[i].imu.gyro[j].x, log_buffer[i].imu.gyro[j].y, log_buffer[i].imu.gyro[j].z);
-    //for (j=0; j < 10; j++)
-    //    printf("$ACCEL,%d,%u,%f,%f,%f\n", log_buffer[i].sample_number, (unsigned int) log_buffer[i].imu.timestamp, log_buffer[i].imu.accel[j].x, log_buffer[i].imu.accel[j].y, log_buffer[i].imu.accel[j].z);    
-    if(accel_enabled)
-        printf("$ACCEL,%d,%u,%f,%f,%f\n", log_buffer[i].sample_number, (unsigned int) log_buffer[i].imu.timestamp, log_buffer[i].imu.accel_mean.x, log_buffer[i].imu.accel_mean.y, log_buffer[i].imu.accel_mean.z);
-    if(gyro_enabled)
-        printf("$GYRO,%d,%u,%f,%f,%f\n", log_buffer[i].sample_number, (unsigned int) log_buffer[i].imu.timestamp, log_buffer[i].imu.gyro_mean.x, log_buffer[i].imu.gyro_mean.y, log_buffer[i].imu.gyro_mean.z);
+    int j;
+    if(accel_enabled) {
+        for (j=0; j < 10; j++)
+            printf("$ACCEL,%d,%lld,%d,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, i, log_buffer[i].imu.accel[j].x, log_buffer[i].imu.accel[j].y, log_buffer[i].imu.accel[j].z);    
+        printf("$ACCELMEAN,%d,%lld,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, log_buffer[i].imu.accel_mean.x, log_buffer[i].imu.accel_mean.y, log_buffer[i].imu.accel_mean.z);
+    }
+    if(gyro_enabled) {
+        for (j=0; j < 10; j++)
+            printf("$GYRO,%d,%lld,%d,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, i, log_buffer[i].imu.gyro[j].x, log_buffer[i].imu.gyro[j].y, log_buffer[i].imu.gyro[j].z);        
+        printf("$GYROMEAN,%d,%lld,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, log_buffer[i].imu.gyro_mean.x, log_buffer[i].imu.gyro_mean.y, log_buffer[i].imu.gyro_mean.z);
+    }        
 }
 
 // Main program.
