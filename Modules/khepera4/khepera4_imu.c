@@ -58,6 +58,9 @@ int khepera4_imu_p(struct sKhepera4SensorsImu *imu) {
     imu->accel_mean.x = 0.;
     imu->accel_mean.y = 0.;
     imu->accel_mean.z = 0.;    
+    imu->gyro_mean.x = 0.;
+    imu->gyro_mean.y = 0.;
+    imu->gyro_mean.z = 0.;        
     for(i=0; i<10; i++) {
         imu->accel_mean.x += imu->accel[i].x;
         imu->accel_mean.y += imu->accel[i].y;
