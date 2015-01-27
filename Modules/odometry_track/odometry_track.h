@@ -36,6 +36,7 @@ struct sOdometryTrack {
         float x;
         float y;
         float theta;
+        long long timestamp;
     } result;
 };
 

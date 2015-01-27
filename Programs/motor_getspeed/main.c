@@ -31,6 +31,7 @@ struct sMeasurement {
     int sample_number;
     struct sMeasurementMotor motor_left;
     struct sMeasurementMotor motor_right;
+    tTimestamp timestamp;  
 };
 
 #define LOG_SIZE 1024
@@ -58,6 +59,7 @@ void help() {
 
 void measurement_take(int i) {
     log_buffer[i].sample_number = sample_number;
+    log_buffer[i].timestamp = khepera4_current_time();
     khepera4_drive_get_current_speed();
     log_buffer[i].motor_left.current_speed = khepera4.motor_left.current_speed;
     log_buffer[i].motor_right.current_speed = khepera4.motor_right.current_speed;
@@ -67,7 +69,7 @@ void measurement_take(int i) {
 // Prints one measurement
 
 void measurement_print(int i) {
-    printf("$MOTOR_SPEED,%d,%d,%d\n", log_buffer[i].sample_number, log_buffer[i].motor_left.current_speed, log_buffer[i].motor_right.current_speed);
+    printf("$MOTOR_SPEED,%d,%lld,%d,%d\n", log_buffer[i].sample_number, log_buffer[i].timestamp, log_buffer[i].motor_left.current_speed, log_buffer[i].motor_right.current_speed);
 }
 
 // Main program.

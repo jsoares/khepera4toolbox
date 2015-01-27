@@ -1,0 +1,109 @@
+/******************************************************************************
+ *
+ * Khepera IV Toolbox
+ * (c) 2014 EPFL, Lausanne, Switzerland
+ * Authors: Jorge Soares et al.
+ *
+ * Code forked from Khepera III Toolbox
+ * (c) 2006 EPFL, Lausanne, Switzerland
+ * Authors: Thomas Lochmatter et al.
+ *
+ * Additional DISAL libraries
+ * (c) 2006 EPFL, Lausanne, Switzerland
+ * Authors: Thomas Lochmatter, Jim Pugh, Sven Gowal, Pascal Gilbert, and others
+ *
+ ******************************************************************************/
+
+
+#include "khepera4.h"
+#include "commandline.h"
+#include "odometry_track.h"
+#include <time.h>
+#include <sys/time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+// The waiting time in the main loop
+int wait_us;
+// The odometry track object
+struct sOdometryTrack ot;
+// Variables for time stamping
+struct timeval start_time, now_time;
+
+// Prints the help text.
+
+void help() {
+    printf("Tracks the robot position using odometry information.\n");
+    printf("\n");
+    printf("Usage: odometry_track [OPTIONS]\n");
+    printf("\n");
+    printf("Options:\n");
+    printf("  -w --wait-us US     Waits US us the main loop (default: 0 ms, max speed)\n");
+    printf("\n");
+}
+
+// Read the command line arguments
+
+void run_initialize() {
+    wait_us = commandline_option_value_int("-w", "--wait-us", 0);
+}
+
+int run() {
+    int sample_number;
+    long time_difference_us;
+
+    // Get the start time
+    gettimeofday(&start_time, NULL);
+
+    // Start tracking
+    odometry_track_start(&ot);
+    if (ot.configuration.is_default) {
+        printf("WARNING: Odometry configuration file (/etc/khepera/odometry) not found. Using default values.\n");
+    }
+
+    // Continuously read motor positions
+    sample_number = 0;
+    while (1) {
+        odometry_track_step(&ot);
+
+        // Get the current time
+        gettimeofday(&now_time, NULL);
+        time_difference_us = (long) (now_time.tv_sec - start_time.tv_sec)*1000000L + (long) (now_time.tv_usec - start_time.tv_usec);
+
+        printf("$POSITION,%d,%lld,%f,%f,%f,%ld\n", sample_number, ot.result.timestamp, ot.result.x, ot.result.y, ot.result.theta, time_difference_us);
+        printf("$MOTOR_POSITION,%d,%lld,%d,%d,%ld\n", sample_number, ot.result.timestamp, ot.state.pos_left_prev, ot.state.pos_right_prev, time_difference_us);
+        sample_number++;
+        fflush(stdout);
+
+        if (wait_us) {
+            usleep(wait_us);
+        }
+    }
+
+    return 0;
+}
+
+// Main program.
+
+int main(int argc, char *argv[]) {
+    // Command line parsing
+    commandline_init();
+    commandline_option_register("-w", "--wait-us", cCommandLine_Option_Value);
+    commandline_parse(argc, argv);
+
+    // Help
+    if (commandline_option_provided("-h", "--help")) {
+        help();
+        exit(1);
+    }
+
+    // Module initialization
+    khepera4_init();
+    odometry_track_init();
+
+    // Read command line arguments and run
+    run_initialize();
+    run();
+    return 0;
+}

@@ -107,12 +107,7 @@ void run_goto_heading(float goal_theta) {
 
         // Calculate the current heading error
         diff_theta = goal_theta - og.track->result.theta;
-        while (diff_theta > PI) {
-            diff_theta -= 2 * PI;
-        }
-        while (diff_theta < -PI) {
-            diff_theta += 2 * PI;
-        }
+        diff_theta = atan2(sin(diff_theta),cos(diff_theta));
 
         // Termination condition
         if (fabs(diff_theta) < 0.01) {

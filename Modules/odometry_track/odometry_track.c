@@ -38,6 +38,7 @@ int odometry_track_start_pos(struct sOdometryTrack * ot, int pos_left, int pos_r
     ot->result.x = 0;
     ot->result.y = 0;
     ot->result.theta = 0;
+    ot->result.timestamp = 0;
 
     ot->state.pos_left_prev = pos_left;
     ot->state.pos_right_prev = pos_right;
@@ -112,6 +113,7 @@ void odometry_track_step_pos(struct sOdometryTrack * ot, int pos_left, int pos_r
     ot->result.x += delta_x;
     ot->result.y += delta_y;
     ot->result.theta += delta_theta;
+    ot->result.timestamp = khepera4_current_time();    
     ot->state.pos_left_prev = pos_left;
     ot->state.pos_right_prev = pos_right;
 }
