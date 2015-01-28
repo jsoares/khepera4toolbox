@@ -30,6 +30,7 @@ struct sKhepera4Battery {
     unsigned int capacity_remaining_absolute; //!< Absolute remaining capacity (mAh)
     unsigned int capacity_remaining_relative; //!< Relative remaining capacity (%)
     float temperature; //!< Temperature (degrees Celsius)
+    long long timestamp;
 };
 
 //! (private) Initializes this submodule.

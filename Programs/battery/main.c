@@ -46,11 +46,12 @@ void help() {
     printf("\n");
     printf("Output format:\n");
     printf("  $BATTERY, sample_number,\n");
+    printf("            timestamp [ms],\n");    
     printf("            voltage [mV],\n");
     printf("            current [mA],\n");
     printf("            current_average [mA],\n");
     printf("            capacity_remaining_absolute [mAh],\n");
-    printf("            capacity_remaining_relative [%%],\n");
+    printf("            capacity_remaining_relative [%],\n");
     printf("            temperature [deg C]\n");
     printf("\n");
 }
@@ -67,8 +68,9 @@ void measurement_take(int i) {
 // Prints one measurement
 
 void measurement_print(int i) {
-    printf("$BATTERY,%d,%#x,%u,%d,%d,%u,%u,%2.1f\n",
+    printf("$BATTERY,%d,%lld,%#x,%u,%d,%d,%u,%u,%2.1f\n",
             log_buffer[i].sample_number,
+            log_buffer[i].battery.timestamp,
             log_buffer[i].battery.status,
             (log_buffer[i].battery.voltage),
             (log_buffer[i].battery.current),
