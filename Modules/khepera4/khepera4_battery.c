@@ -34,7 +34,7 @@ int khepera4_battery_p(struct sKhepera4Battery *battery) {
     }
 
     battery->status = i2cal_readbuffer_uint8(buf, 0);
-    battery->capacity_remaining_absolute = i2cal_readbuffer_uint16(buf, 1);
+    battery->capacity_remaining_absolute = i2cal_readbuffer_uint16(buf, 1)*1.6;
     battery->capacity_remaining_relative = i2cal_readbuffer_uint8(buf, 3);
     battery->current = (int) ((float) i2cal_readbuffer_int16(buf, 4))*0.07813;
     battery->current_average = (int) ((float) i2cal_readbuffer_int16(buf, 6))*0.07813;
