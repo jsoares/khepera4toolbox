@@ -47,6 +47,7 @@ void help() {
     printf("Output format:\n");
     printf("  $BATTERY, sample_number,\n");
     printf("            timestamp [ms],\n");    
+    printf("            status,\n");        
     printf("            voltage [mV],\n");
     printf("            current [mA],\n");
     printf("            current_average [mA],\n");
