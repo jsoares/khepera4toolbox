@@ -71,12 +71,12 @@ void measurement_print(int i) {
     if(accel_enabled) {
         printf("$ACCELMEAN,%d,%lld,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, log_buffer[i].imu.accel_mean.x, log_buffer[i].imu.accel_mean.y, log_buffer[i].imu.accel_mean.z);    
         for (j=0; j < 10; j++)
-            printf("$ACCEL,%d,%lld,%d,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, i, log_buffer[i].imu.accel[j].x, log_buffer[i].imu.accel[j].y, log_buffer[i].imu.accel[j].z);    
+            printf("$ACCEL,%d,%lld,%d,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, j, log_buffer[i].imu.accel[j].x, log_buffer[i].imu.accel[j].y, log_buffer[i].imu.accel[j].z);    
     }
     if(gyro_enabled) {
         printf("$GYROMEAN,%d,%lld,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, log_buffer[i].imu.gyro_mean.x, log_buffer[i].imu.gyro_mean.y, log_buffer[i].imu.gyro_mean.z);    
         for (j=0; j < 10; j++)
-            printf("$GYRO,%d,%lld,%d,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, i, log_buffer[i].imu.gyro[j].x, log_buffer[i].imu.gyro[j].y, log_buffer[i].imu.gyro[j].z);        
+            printf("$GYRO,%d,%lld,%d,%f,%f,%f\n", log_buffer[i].sample_number, log_buffer[i].imu.timestamp, j, log_buffer[i].imu.gyro[j].x, log_buffer[i].imu.gyro[j].y, log_buffer[i].imu.gyro[j].z);        
     }        
 }
 
