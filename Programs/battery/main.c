@@ -52,7 +52,7 @@ void help() {
     printf("            current [mA],\n");
     printf("            current_average [mA],\n");
     printf("            capacity_remaining_absolute [mAh],\n");
-    printf("            capacity_remaining_relative [%],\n");
+    printf("            capacity_remaining_relative [%%],\n");
     printf("            temperature [deg C]\n");
     printf("\n");
 }

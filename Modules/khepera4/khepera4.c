@@ -17,6 +17,7 @@
 
 #include <assert.h>
 #include <stdio.h>
+#include <sys/time.h>
 #include "khepera4.h"
 
 /*** Module Initialization ***/

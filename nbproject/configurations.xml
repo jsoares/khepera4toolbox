@@ -131,12 +131,7 @@
           </df>
           <in>main.c</in>
         </df>
-        <df name="odometry_track_1">
-          <df name="matlab">
-            <in>ContStep.m</in>
-            <in>odometry_track.m</in>
-            <in>set2range.m</in>
-          </df>
+        <df name="odometry_track_timestamp">
           <in>main.c</in>
         </df>
         <df name="odorboard_led_external">
@@ -474,27 +469,15 @@
             tool="0"
             flavor2="2">
       </item>
-      <item path="Programs/odometry_track_1/main.c" ex="false" tool="0" flavor2="2">
+      <item path="Programs/odometry_track_timestamp/main.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
         <cTool>
           <incDir>
             <pElem>Programs/odometry_track</pElem>
           </incDir>
         </cTool>
-      </item>
-      <item path="Programs/odometry_track_1/matlab/ContStep.m"
-            ex="false"
-            tool="0"
-            flavor2="2">
-      </item>
-      <item path="Programs/odometry_track_1/matlab/odometry_track.m"
-            ex="false"
-            tool="0"
-            flavor2="2">
-      </item>
-      <item path="Programs/odometry_track_1/matlab/set2range.m"
-            ex="false"
-            tool="0"
-            flavor2="2">
       </item>
       <item path="Programs/odorboard_led_external/main.c"
             ex="false"
@@ -936,13 +919,6 @@
         </cTool>
       </folder>
       <folder path="0/Programs/odometry_track/matlab">
-        <cTool>
-          <incDir>
-            <pElem>Programs/odometry_track/matlab</pElem>
-          </incDir>
-        </cTool>
-      </folder>
-      <folder path="0/Programs/odometry_track_1/matlab">
         <cTool>
           <incDir>
             <pElem>Programs/odometry_track/matlab</pElem>
