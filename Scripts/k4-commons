@@ -4,8 +4,8 @@ use strict;
 # This is not a real Khepera IV script, but a file with common functions used by other scripts.
 # This file also contains a series of configuration values, which allow you to adapt the script to your needs. Note, however, that the documentation assumes that you leave this file unchanged!
 
-sub WLAN_BASE_IP {'192.168.141.'}
-sub WLAN_COMPUTER_IP {'192.168.141.1'}
+sub WLAN_BASE_IP {'192.168.2.'}
+sub WLAN_COMPUTER_IP {'192.168.2.1'}
 sub USBNET_ROBOT_IP {'192.168.1.2'}
 sub USBNET_COMPUTER_IP {'192.168.1.1'}
 

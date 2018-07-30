@@ -1,5 +1,0 @@
-To calibrate the range and bearing board, navigate to the scripts folder and type:
-> sh run_calibration.sh
-
-and follow the instructions. You need to have Swistrack installed on a computer of
-the network as well as perl.

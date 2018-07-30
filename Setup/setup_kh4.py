@@ -107,10 +107,10 @@ iface lo inet loopback
 auto wlan3
 iface wlan3 inet static
 	wireless_mode managed
-	wireless_essid disal-robots
-	address 192.168.141.{0}
+	wireless_essid network-name
+	address 192.168.2.{0}
 	netmask 255.255.255.0
-	gateway 192.168.141.1
+	gateway 192.168.2.1
 
 
 # Ethernet/RNDIS gadget (g_ether)                                                                                                                                                
